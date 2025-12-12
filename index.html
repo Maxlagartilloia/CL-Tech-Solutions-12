@@ -1,244 +1,204 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Plan12 · Menús Digitales · CL Tech Solutions</title>
-
-<!-- Favicon -->
-<link rel="icon" type="image/png" href="https://i.postimg.cc/s2YtHvzB/IMG_0156.png">
-
-<!-- SEO -->
-<meta name="description" content="Menú digital profesional con dominio opcional, instalación incluida y solo $12 al mes. Contrato mínimo 1 año. Ideal para restaurantes y heladerías." />
-<meta name="keywords" content="menú digital, plan12, restaurante, comida rápida, heladería, CL Tech Solutions" />
-
-<!-- Tailwind -->
-<script src="https://cdn.tailwindcss.com"></script>
-
-<!-- Lucide Icons -->
-<script src="https://unpkg.com/lucide@latest"></script>
-
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        clturq: "#11D7E3",
-        clblack: "#05060A",
-        clgray: "#11141B",
-        claccent: "#F97316"
-      }
-    }
-  }
-}
-</script>
-
-<style>
-body{
-  font-family:'Montserrat',sans-serif;
-  background: radial-gradient(circle at top,#11141B,#05060A 50%,#000);
-  color:white;
-}
-.badge{
-  font-size:11px;
-  letter-spacing:0.18em;
-  text-transform:uppercase;
-}
-
-.card{
-  border-radius:1.25rem;
-  border:1px solid rgba(255,255,255,0.08);
-  background:rgba(5,6,10,0.92);
-  box-shadow:0 24px 70px rgba(0,0,0,0.85);
-}
-
-.mockup{
-  border-radius:1rem;
-  overflow:hidden;
-  box-shadow:0 18px 55px rgba(0,0,0,0.9);
-}
-</style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menú Digital – Plan $12/mes | CL Tech Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .glow { text-shadow: 0 0 10px rgba(255,255,255,0.4); }
+        .btn-cta { animation: pulse 2s infinite; }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.04); }
+            100% { transform: scale(1); }
+        }
+    </style>
 </head>
 
-<body class="overflow-x-hidden">
-
-<!-- NAV -->
-<header class="sticky top-0 z-50 bg-black/80 backdrop-blur border-b border-white/10">
-  <div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
-      <img src="https://i.postimg.cc/s2YtHvzB/IMG_0156.png" class="h-16" />
-      <a href="#cta" class="hidden md:flex bg-claccent text-black font-semibold px-6 py-3 rounded-full shadow-lg">
-        Empezar ahora
-      </a>
-  </div>
-</header>
+<body class="bg-slate-950 text-white">
 
 <!-- HERO -->
-<section class="pt-12 pb-20">
-<div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-10 items-center">
-
-  <div>
-    <span class="badge px-3 py-1 rounded-full border border-claccent/50 bg-claccent/20 text-claccent">
-      Plan12 · CL Tech Solutions
-    </span>
-
-    <h1 class="text-4xl md:text-5xl font-bold leading-tight mt-4">
-      Menú digital <span class="text-clturq">PRO</span><br>
-      para tu restaurante u heladería.
+<section class="relative w-full min-h-screen flex flex-col items-center justify-center px-6 text-center bg-gradient-to-b from-slate-900 to-black">
+    <h1 class="text-4xl md:text-5xl font-extrabold leading-tight glow">
+        Tu Menú Digital Profesional<br />
+        por solo <span class="text-emerald-400">$12/mes</span>
     </h1>
 
-    <p class="text-white/70 text-sm mt-4">
-      Incluye instalación completa + hosting + dominio opcional + subdominio gratis + soporte.  
-      <strong class="text-clturq">Solo $12 al mes</strong>. Contrato mínimo 1 año.
+    <p class="text-slate-300 mt-4 text-lg max-w-2xl">
+        Un menú moderno, rápido y listo para recibir pedidos por WhatsApp.
+        Ideal para restaurantes, comidas rápidas y heladerías.
     </p>
 
-    <div class="mt-6 flex gap-3">
-      <a href="#cta" class="bg-claccent text-black font-semibold rounded-full px-6 py-3 shadow-lg">
-        Quiero mi menú digital
-      </a>
-      <button 
-        onclick="document.getElementById('modelos').scrollIntoView({behavior:'smooth'})"
-        class="border border-white/20 px-6 py-3 rounded-full text-white/80"
-      >
-        Ver ejemplos
-      </button>
+    <!-- PRECIOS -->
+    <div class="bg-white/10 border border-white/20 backdrop-blur-xl rounded-2xl p-6 mt-8 max-w-md">
+        <p class="text-xl font-bold text-emerald-400">Setup inicial: $72</p>
+        <p class="text-slate-300 text-sm mt-1">Incluye instalación + hosting por 1 año</p>
+
+        <div class="mt-4 border-t border-white/10 pt-4">
+            <p class="text-3xl font-bold">+ $12/mes</p>
+            <p class="text-slate-400 text-sm">Contrato mínimo de 1 año</p>
+        </div>
     </div>
 
-    <p class="text-[11px] text-white/60 mt-3">
-      Ideal para restaurantes, comidas rápidas, antojos y heladerías.
-    </p>
-  </div>
-
-  <div class="mockup border border-white/10">
-    <img src="mockup-rest-1.jpg" class="w-full" />
-  </div>
-
-</div>
+    <a href="#formulario" class="btn-cta mt-8 bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-4 px-8 rounded-xl shadow-xl transition">
+        QUIERO MI MENÚ DIGITAL
+    </a>
 </section>
 
-<!-- OFERTA -->
-<section class="py-16 bg-[#0A0B0E] border-t border-white/10">
-<div class="max-w-5xl mx-auto px-4">
+<!-- SECCION: MOCKUPS -->
+<section class="py-20 px-6 max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-10">Así lucirá tu Menú Digital</h2>
 
-  <h2 class="text-3xl font-bold mb-4">¿Qué incluye exactamente el Plan12?</h2>
-  <p class="text-white/70 mb-6">Nada oculto. Todo clarito.</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
 
-  <div class="grid md:grid-cols-2 gap-6 text-sm">
+        <!-- Servicios -->
+        <div class="relative aspect-[9/16] rounded-xl overflow-hidden cursor-pointer border border-white/10 bg-slate-800"
+            onclick="openModal('Servicios Profesionales', ['mockup-servicios-1.jpg', 'mockup-servicios-2.jpg'])">
+            <img src="mockup-servicios-1.jpg" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-3 flex flex-col justify-end">
+                <span class="text-xs font-bold text-emerald-400">Servicios</span>
+                <span class="text-[11px] text-slate-300">Ver modelo</span>
+            </div>
+        </div>
 
-    <div class="card px-6 py-6 space-y-3">
-      <h3 class="font-semibold text-clturq text-lg">Setup inicial ($72)</h3>
-      <p>✔ Dominio 1 año ($60)  
-         ✔ Instalación del menú ($12)</p>
-      <p class="text-white/60 text-xs">El dominio es opcional. Si no quieres pagar dominio → te damos un subdominio gratis.</p>
+        <!-- Restaurante -->
+        <div class="relative aspect-[9/16] rounded-xl overflow-hidden cursor-pointer border border-white/10 bg-slate-800"
+            onclick="openModal('Restaurantes y Comidas', ['mockup-restaurante-1.jpg','mockup-restaurante-2.jpg'])">
+            <img src="mockup-restaurante-1.jpg" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-3 flex flex-col justify-end">
+                <span class="text-xs font-bold text-orange-400">Restaurantes</span>
+                <span class="text-[11px] text-slate-300">Ver carrito</span>
+            </div>
+        </div>
+
+        <!-- Heladería -->
+        <div class="relative aspect-[9/16] rounded-xl overflow-hidden cursor-pointer border border-white/10 bg-slate-800"
+            onclick="openModal('Heladerías y Postres', ['mockup-heladeria-1.jpg','mockup-heladeria-2.jpg'])">
+            <img src="mockup-heladeria-1.jpg" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-3 flex flex-col justify-end">
+                <span class="text-xs font-bold text-pink-400">Heladerías</span>
+                <span class="text-[11px] text-slate-300">Ver modelo</span>
+            </div>
+        </div>
+
     </div>
-
-    <div class="card px-6 py-6 space-y-3">
-      <h3 class="font-semibold text-clturq text-lg">Mensualidad de $12</h3>
-      <p>✔ Hosting  
-         ✔ Actualización de platos  
-         ✔ Cambios ilimitados  
-         ✔ Soporte directo por WhatsApp  
-         ✔ Optimización visual</p>
-      <p class="text-white/60 text-xs">Contrato mínimo 12 meses.</p>
-    </div>
-
-  </div>
-
-  <p class="text-center mt-6 text-white/60 text-xs">
-    Si no compras dominio → solo pagas <strong>$12 hoy</strong> y tu menú sale al aire con subdominio gratis.
-  </p>
-
-</div>
 </section>
 
-<!-- MODELOS -->
-<section id="modelos" class="py-16 bg-clblack border-t border-white/10">
-  <div class="max-w-6xl mx-auto px-4">
+<!-- DOMINIO VS SUBDOMINIO -->
+<section class="py-20 px-6 bg-slate-900/40 border-t border-white/10">
+    <h2 class="text-3xl font-bold text-center mb-10">¿Dominio propio o Subdominio?</h2>
 
-    <h2 class="text-3xl font-bold mb-6">Modelos disponibles</h2>
+    <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
 
-    <div class="grid md:grid-cols-3 gap-6">
+        <!-- DOMINIO PROPIO -->
+        <div class="p-6 bg-white/10 rounded-2xl border border-white/20">
+            <h3 class="text-xl font-bold text-emerald-400 mb-3">Dominio propio (.com)</h3>
+            <p class="text-slate-300 text-sm mb-4">
+                Si compras dominio, tu marca se ve profesional, seria y lista para posicionarse.
+            </p>
 
-      <!-- Restaurante -->
-      <div class="card p-4">
-        <p class="text-xs text-white/50 uppercase tracking-widest">Restaurante</p>
-        <img src="mockup-rest-1.jpg" class="rounded-xl mb-2" />
-        <img src="mockup-rest-2.jpg" class="rounded-xl" />
-      </div>
+            <p class="bg-black/40 p-3 rounded-lg text-sm text-slate-200 font-mono">
+                www.tunegocio.com
+            </p>
 
-      <!-- Comida rápida -->
-      <div class="card p-4">
-        <p class="text-xs text-white/50 uppercase tracking-widest">Comida rápida</p>
-        <img src="mockup-fast-1.jpg" class="rounded-xl mb-2" />
-        <img src="mockup-fast-2.jpg" class="rounded-xl" />
-      </div>
+            <p class="text-slate-400 text-xs mt-3">
+                Recomendado para negocios que quieren crecer y ser encontrados en Google.
+            </p>
+        </div>
 
-      <!-- Heladería -->
-      <div class="card p-4">
-        <p class="text-xs text-white/50 uppercase tracking-widest">Heladería</p>
-        <img src="mockup-ice-1.jpg" class="rounded-xl mb-2" />
-        <img src="mockup-ice-2.jpg" class="rounded-xl" />
-      </div>
+        <!-- SUBDOMINIO -->
+        <div class="p-6 bg-white/5 rounded-2xl border border-white/10">
+            <h3 class="text-xl font-bold text-blue-400 mb-3">Subdominio GRATIS</h3>
+            <p class="text-slate-300 text-sm mb-4">
+                Si no deseas comprar dominio, puedes iniciar YA mismo con un subdominio gratuito.
+            </p>
+
+            <p class="bg-black/40 p-3 rounded-lg text-sm text-slate-200 font-mono break-all">
+                tunegocio.crisslombeida.com
+            </p>
+
+            <p class="text-slate-400 text-xs mt-3">
+                Ideal para emprendedores que quieren empezar rápido sin invertir mucho.
+            </p>
+        </div>
 
     </div>
 
-  </div>
+    <div class="text-center mt-10">
+        <a href="#formulario" class="btn-cta bg-emerald-500 hover:bg-emerald-600 py-4 px-8 rounded-xl font-bold">
+            INICIAR AHORA
+        </a>
+    </div>
 </section>
 
 <!-- PASOS -->
-<section class="py-16 bg-[#0D0F14] border-t border-white/10">
-  <div class="max-w-4xl mx-auto px-4">
+<section class="py-20 px-6 max-w-5xl mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-10">Solo 3 pasos para activar tu menú</h2>
 
-    <h2 class="text-3xl font-bold mb-6">¿Cómo funciona?</h2>
+    <div class="grid md:grid-cols-3 gap-8">
 
-    <div class="grid md:grid-cols-3 gap-6 text-sm">
+        <div class="p-6 bg-white/5 rounded-xl border border-white/10">
+            <h3 class="text-xl font-bold mb-2">1. Instala tu menú</h3>
+            <p class="text-sm text-slate-300">
+                Pagas el setup de <strong>$72</strong> e instalamos todo por ti: hosting, dominio o subdominio.
+            </p>
+        </div>
 
-      <div class="card p-5">
-        <h3 class="font-semibold text-claccent mb-2">Paso 1</h3>
-        <p>Hablas con nosotros por WhatsApp y eliges tu modelo.</p>
-      </div>
+        <div class="p-6 bg-white/5 rounded-xl border border-white/10">
+            <h3 class="text-xl font-bold mb-2">2. Personalizamos tu menú</h3>
+            <p class="text-sm text-slate-300">
+                Enviamos tu menú digital listo: fotos, precios, categorías y botón de pedidos.
+            </p>
+        </div>
 
-      <div class="card p-5">
-        <h3 class="font-semibold text-claccent mb-2">Paso 2</h3>
-        <p>Pagas tu setup inicial ($72) o solo $12 si usas subdominio.</p>
-      </div>
-
-      <div class="card p-5">
-        <h3 class="font-semibold text-claccent mb-2">Paso 3</h3>
-        <p>En menos de 48 horas tu menú está listo para vender.</p>
-      </div>
-
+        <div class="p-6 bg-white/5 rounded-xl border border-white/10">
+            <h3 class="text-xl font-bold mb-2">3. Pagas $12/mes</h3>
+            <p class="text-sm text-slate-300">
+                Incluye mantenimiento, cambios de platos y soporte mensual.
+            </p>
+        </div>
     </div>
-  </div>
 </section>
 
-<!-- CTA FINAL -->
-<section id="cta" class="py-20 bg-clblack border-t border-white/10 text-center">
-  <h2 class="text-3xl font-bold mb-3">
-    ¿Listo para activar tu menú digital?
-  </h2>
-  <p class="text-white/70 text-sm mb-6">
-    Es tu turno de vender más. Activación inmediata.
-  </p>
+<!-- FORMULARIO SIMPLIFICADO -->
+<section id="formulario" class="py-20 px-6 bg-slate-900 border-t border-white/10">
+    <h2 class="text-3xl font-bold text-center mb-10">Solicitar Menú Digital</h2>
 
-  <a href="https://wa.me/593985380150" class="bg-claccent text-black font-bold px-10 py-4 rounded-full text-lg shadow-xl">
-    Activar Plan12 ahora
-  </a>
+    <form class="max-w-xl mx-auto bg-white/5 p-8 rounded-2xl border border-white/20 backdrop-blur">
+
+        <label class="block mb-4">
+            <span class="text-sm">Nombre del negocio</span>
+            <input class="w-full mt-1 p-3 rounded-lg bg-white/10 border border-white/20" />
+        </label>
+
+        <label class="block mb-4">
+            <span class="text-sm">WhatsApp</span>
+            <input class="w-full mt-1 p-3 rounded-lg bg-white/10 border border-white/20" />
+        </label>
+
+        <label class="block mb-6">
+            <span class="text-sm">Ciudad</span>
+            <input class="w-full mt-1 p-3 rounded-lg bg-white/10 border border-white/20" />
+        </label>
+
+        <button class="w-full py-3 bg-emerald-500 hover:bg-emerald-600 rounded-xl font-bold">
+            ENVIAR SOLICITUD
+        </button>
+    </form>
 </section>
 
-<!-- FOOTER -->
-<footer class="py-6 text-center text-[11px] text-white/50">
-  © 2025 CL Tech Solutions · Plan12 Ecuador
-</footer>
-
-<!-- BOTÓN WHATSAPP -->
-<a href="https://wa.me/593985380150" 
-class="fixed bottom-6 right-6 bg-green-500 p-4 rounded-full shadow-xl hover:scale-110 transition">
-  <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-white" fill="currentColor" viewBox="0 0 24 24">
-    <path d="M..."></path>
-  </svg>
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/593990945636?text=Quiero%20activar%20mi%20menú%20digital" 
+   class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-xl">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-width="2" d="M20 12a8 8 0 10-3.1 6.3L21 21l-2-5.1A7.96 7.96 0 0020 12z" />
+    </svg>
 </a>
-
-<script>lucide.createIcons();</script>
 
 </body>
 </html>
