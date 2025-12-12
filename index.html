@@ -2,179 +2,178 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Menú Digital Profesional — CL Tech Solutions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menú Digital · CLT Solutions · Plan 12</title>
 
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FONTS & ICONS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Fuente -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
+  <!-- COLORES + TEMA STARTUP IA -->
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #05080f;
+    :root{
+      --bg1:#030c1a; 
+      --bg2:#071a2c; 
+      --card: rgba(0, 20, 45, 0.65);
+      --ink:#ffffff;
+
+      /* ACENTOS IA */
+      --c1:#00eaff;
+      --c2:#007bff;
+      --glow: 0 0 25px rgba(0,255,255,0.45);
+
+      --cta1:#0ef; 
+      --cta2:#4f9;
+      --muted:#9db8c7;
+      --yellow-cta:#FFD700;
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      font-family:Poppins,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      background:var(--bg1);
+      color:var(--ink);
+      line-height:1.6;
       overflow-x: hidden;
     }
 
-    /* Fondo IA Futurista */
-    .bg-ia {
-      background: radial-gradient(circle at top, #0f172a 0%, #05080f 70%);
+    /* PARTICULAS DE FONDO */
+    #particle-canvas {
+      position: fixed; top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1;
+    }
+
+    /* LOGO FLOTANTE */
+    .logo{
+      position: fixed; top: 20px; left: 20px;
+      background: rgba(0, 40, 80, 0.45);
+      backdrop-filter: blur(10px);
+      color: #fff;
+      padding: 10px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      text-decoration: none;
+      z-index:1000;
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: var(--glow);
+    }
+    .logo span{color:var(--c1);}
+
+    /* WHATSAPP FLOTANTE */
+    .contact-fab {
+      position: fixed; bottom: 25px; right: 25px;
+      width: 65px; height: 65px;
+      background: linear-gradient(45deg, var(--c1), var(--c2));
+      border-radius: 50%; color:#fff;
+      display:flex;align-items:center;justify-content:center;
+      font-size:2rem;
+      cursor:pointer; 
+      box-shadow: 0 0 25px rgba(0,255,255,0.4);
+      z-index:1000;
+      transition:.25s;
+    }
+    .contact-fab:hover{
+      transform: scale(1.1);
+      box-shadow: 0 0 35px rgba(0,255,255,0.7);
+    }
+
+    /* HERO IA */
+    header{
+      padding:140px 20px 120px;
+      text-align:center;
+      background: radial-gradient(circle at 50% 20%, rgba(0,120,255,0.25), rgba(0,0,0,0.7)), 
+                  url("https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1200&auto=format") center/cover;
       position: relative;
+      overflow: hidden;
+    }
+    header::after{
+      content:"";
+      position:absolute; inset:0;
+      background:linear-gradient(180deg, rgba(0,0,0,0.4), rgba(0,20,50,0.9));
     }
 
-    .bg-ia::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: url('https://i.postimg.cc/MTB3Lx8N/ai-lines2.webp');
-      background-size: cover;
-      opacity: .12;
-      animation: float 18s infinite linear;
+    header h1{
+      position:relative;
+      font-size:clamp(2.6rem,6vw,4rem);
+      font-weight:900;
+      text-shadow:0 0 25px rgba(0,255,255,0.4);
+      z-index:2;
+    }
+    header .sub{
+      display:block;margin:12px auto;
+      font-size:1.1rem;
+      color:#cfeaff;
+      max-width:800px;
+      position:relative; z-index:2;
+    }
+    .btn{
+      display:inline-block;
+      padding:14px 32px;
+      margin-top:20px;
+      border-radius:999px;
+      font-weight:700;
+      letter-spacing:.5px;
+      text-decoration:none;
+      color:#000;
+      background: linear-gradient(90deg, var(--cta1), var(--cta2));
+      box-shadow: var(--glow);
+      position:relative; z-index:2;
+    }
+    .btn:hover{
+      transform:translateY(-3px);
+      box-shadow:0 0 35px rgba(0,255,255,0.7);
     }
 
-    @keyframes float {
-      from { transform: translateY(0); }
-      to { transform: translateY(-12%); }
+    /* REVEAL */
+    .reveal{
+      opacity:0;
+      transform:translateY(25px);
+      transition:1s ease;
+    }
+    .reveal.show{
+      opacity:1;
+      transform:none;
     }
 
-    /* Glow del logo */
-    .logo-glow {
-      filter: drop-shadow(0 0 12px #00eaff);
+    /* SECCIÓN TÍTULOS */
+    .section{
+      padding:90px 20px;
+    }
+    .section-title{
+      font-size:clamp(2rem,4vw,2.8rem);
+      text-align:center;
+      margin-bottom:12px;
+      text-shadow:0 0 12px rgba(0,255,255,0.45);
+    }
+    .section-subtitle{
+      text-align:center;
+      max-width:780px;
+      margin:0 auto 40px;
+      color:var(--muted);
     }
 
-    /* Tarjeta blur premium */
-    .glass {
-      background: rgba(255, 255, 255, 0.06);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255,255,255,.12);
+    /* TARJETAS BENEFICIOS */
+    .benefits{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:30px; max-width:1200px; margin:auto;
     }
-
-    .btn-grad {
-      background: linear-gradient(90deg, #00d2ff, #00ffa8);
+    .benefit{
+      background:var(--card);
+      border-radius:18px;
+      padding:32px;
+      text-align:center;
+      border:1px solid rgba(255,255,255,0.1);
+      box-shadow:0 0 25px rgba(0,255,255,0.1);
+      transition:.25s;
     }
-  </style>
-</head>
-
-<body class="text-white bg-ia">
-
-  <!-- HERO -->
-  <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 relative">
-
-    <img src="logo-cltech.png" class="w-48 mb-8 logo-glow" alt="CL Tech Solutions">
-
-    <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
-      Tu Menú Digital Profesional  
-      <span class="block text-[#00ffa8]">Instalado en menos de 24 horas</span>
-    </h1>
-
-    <p class="text-white/80 mt-4 max-w-xl">
-      Una solución moderna, rápida y diseñada para <span class="font-semibold text-white">restaurantes, comidas rápidas y heladerías</span> que necesitan vender más sin complicarse con tecnología.
-    </p>
-
-    <div class="glass p-6 rounded-xl mt-8 w-full max-w-md">
-      <h3 class="text-xl font-bold text-[#00ffa8]">Setup inicial: $72</h3>
-      <p class="text-sm text-white/70">Incluye dominio + hosting + instalación + mantenimiento 12 meses</p>
-
-      <hr class="border-white/10 my-4">
-
-      <p class="text-2xl font-bold">$12 <span class="text-lg font-normal">/ mes</span></p>
-      <p class="text-white/70 text-sm">Contrato mínimo 1 año</p>
-    </div>
-
-    <a href="#planes" class="btn-grad text-black font-bold mt-8 px-8 py-3 rounded-full text-lg shadow-lg">
-      Ver planes disponibles
-    </a>
-  </section>
-
-  <!-- Dominio vs Subdominio -->
-  <section id="planes" class="px-6 py-20 max-w-5xl mx-auto">
-    <h2 class="text-3xl font-extrabold mb-6 text-center">¿Dominio propio… o subdominio gratuito?</h2>
-
-    <p class="text-white/70 text-center mb-12 max-w-2xl mx-auto">
-      Puedes iniciar con lo que prefieras. Pero escucha esto:  
-      <span class="text-[#00ffa8] font-semibold">tu dominio propio es tu marca</span>.  
-      Da confianza, profesionalismo y te diferencia del resto.
-    </p>
-
-    <div class="grid md:grid-cols-2 gap-8">
-
-      <!-- Dominio propio -->
-      <div class="glass p-6 rounded-2xl">
-        <h3 class="text-2xl font-bold mb-2">Dominio Propio (Recomendado)</h3>
-        <p class="text-white/70 text-sm mb-4">Tu marca con identidad real, confiable y 100% profesional:</p>
-
-        <ul class="text-white/80 space-y-2 text-sm">
-          <li>• www.tunegocio.com</li>
-          <li>• Ideal para crecer y posicionarte</li>
-          <li>• Queda registrado a tu nombre</li>
-          <li>• Aumenta tu credibilidad y ventas</li>
-        </ul>
-
-        <p class="text-lg font-bold mt-4">$60 / año</p>
-        <p class="text-xs text-white/60">Incluye dominio + hosting + instalación + mantenimiento 12 meses</p>
-
-        <a href="#form" class="block btn-grad text-black text-center font-bold mt-5 py-3 rounded-full">Quiero mi dominio</a>
-      </div>
-
-      <!-- Subdominio -->
-      <div class="glass p-6 rounded-2xl">
-        <h3 class="text-2xl font-bold mb-2">Subdominio Gratuito</h3>
-        <p class="text-white/70 text-sm mb-4">Empieza sin comprar dominio:</p>
-
-        <ul class="text-white/80 space-y-2 text-sm">
-          <li>• tuemprendimiento.crisslombeida.com</li>
-          <li>• Instalación inmediata</li>
-          <li>• Sin trámites ni costos iniciales altos</li>
-          <li>• Puedes cambiar a dominio propio cuando desees</li>
-        </ul>
-
-        <p class="text-lg font-bold mt-4">$12 / mes</p>
-        <p class="text-xs text-white/60">Solo pagas la mensualidad — sin dominio</p>
-
-        <a href="#form" class="block bg-white text-black text-center font-bold mt-5 py-3 rounded-full">Quiero empezar ya</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Beneficios -->
-  <section class="px-6 py-20 max-w-5xl mx-auto">
-    <h2 class="text-3xl font-extrabold mb-6 text-center">¿Qué incluye tu Menú Digital?</h2>
-
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="glass p-6 rounded-xl text-center">
-        <h3 class="font-bold text-xl mb-2">Actualizaciones ilimitadas</h3>
-        <p class="text-white/70 text-sm">Agregamos platos, precios e imágenes cuando lo necesites.</p>
-      </div>
-
-      <div class="glass p-6 rounded-xl text-center">
-        <h3 class="font-bold text-xl mb-2">Diseño profesional</h3>
-        <p class="text-white/70 text-sm">Tu menú luce moderno, rápido y listo para recibir pedidos.</p>
-      </div>
-
-      <div class="glass p-6 rounded-xl text-center">
-        <h3 class="font-bold text-xl mb-2">Botón directo a WhatsApp</h3>
-        <p class="text-white/70 text-sm">Tus clientes piden directo sin instalar apps.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA final -->
-  <section class="text-center py-20 px-6">
-    <h2 class="text-3xl font-extrabold mb-4">Listo para modernizar tu negocio?</h2>
-    <p class="text-white/70 max-w-xl mx-auto mb-8">Instalamos tu menú en menos de 24 horas. Con dominio propio o subdominio gratuito.</p>
-
-    <a href="#form" class="btn-grad px-10 py-4 text-lg rounded-full font-bold text-black shadow-lg">
-      QUIERO MI MENÚ DIGITAL
-    </a>
-  </section>
-
-  <!-- WhatsApp flotante -->
-  <a href="https://wa.me/593990945636?text=Hola%2C%20quiero%20mi%20men%C3%BA%20digital%20ya"
-     class="fixed bottom-6 right-6 bg-green-500 p-4 rounded-full shadow-lg">
-    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" class="w-8">
-  </a>
-
-</body>
-</html>
+    .benefit:hover{
+      transform:translateY(-6px);
+      box-shadow:0 0 35px rgba(0,255,255,0.4);
+    }
+    .benefit i{
+      font-size:2.4rem;
+      margin-bottom:12px;
+      color:var(--c1);
+    }
