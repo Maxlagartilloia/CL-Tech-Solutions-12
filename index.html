@@ -59,38 +59,89 @@ body{
   height:40px;
 }
 
-/* ------------------ HERO ------------------ */
-header{
-  text-align:center;
-  padding:160px 20px 120px;
-  background:linear-gradient(160deg, #000, #0b0f1a 40%, #001018);
+/* Logo */
+.logo-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255,255,255,0.06);
+  padding: 10px 18px;
+  border-radius: 14px;
+  backdrop-filter: blur(8px);
+  margin-bottom: 25px;
 }
-header h1{
-  font-size:clamp(2.4rem, 6vw, 4rem);
-  font-weight:800;
+
+.logo-box img {
+  height: 38px;
 }
-header p{
-  margin-top:14px;
-  font-size:1.1rem;
-  max-width:700px;
-  margin-inline:auto;
-  color:var(--muted);
+
+/* Contenedor del hero */
+header {
+  text-align: center;
+  padding: 160px 20px 120px;
+  background: linear-gradient(160deg, #000, #0b0f1a 40%, #001018);
 }
-.btn{
-  display:inline-block;
-  margin-top:25px;
-  padding:14px 28px;
-  color:#000;
-  font-weight:700;
-  text-decoration:none;
-  border-radius:50px;
-  background:var(--cta);
-  transition:0.25s ease;
+
+header h1 {
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: 800;
+  line-height: 1.2;
 }
-.btn:hover{
-  transform:translateY(-4px);
-  box-shadow:0 10px 30px rgba(0,255,180,0.4);
+
+header p {
+  margin-top: 14px;
+  font-size: 1.15rem;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--muted);
 }
+
+/* Imagen del Hero */
+.hero-image-container {
+  margin: 35px auto 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 340px;
+  border-radius: 18px;
+  object-fit: cover;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.45);
+}
+<!-- ============== HERO COMPLETO ============== -->
+<header>
+  <div class="hero-content">
+
+    <!-- LOGO -->
+    <div class="logo-box">
+      <img src="logo.png" alt="CL Tech Solutions">
+      <span>CL TECH SOLUTIONS</span>
+    </div>
+
+    <!-- TITULAR -->
+    <h1>Menú Digital Profesional<br>Instalado en 24 Horas</h1>
+
+    <!-- SUBTÍTULO -->
+    <p>
+      Actualizaciones ilimitadas, soporte completo, diseño moderno y tu negocio
+      listo para recibir pedidos directamente por WhatsApp.
+    </p>
+
+    <!-- IMAGEN DEL HERO -->
+    <div class="hero-image-container">
+      <img src="hero-pedido.jpg"
+           alt="Cliente realizando pedido con menú digital"
+           class="hero-image">
+    </div>
+
+    <!-- BOTÓN -->
+    <a href="#planes" class="btn">Ver planes</a>
+
+  </div>
+</header>
 
 /* ------------------ SECTION ------------------ */
 .section{
