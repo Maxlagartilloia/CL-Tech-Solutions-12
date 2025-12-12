@@ -1,278 +1,424 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Menú Digital Profesional – CL Tech Solutions</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menú Digital PRO | CL Tech Solutions</title>
 
-<style>
+  <!-- Fuentes y estilos -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-/* COLORES */
-:root{
-  --cta:#00ff9d;
-  --muted:#bababa;
-  --bg:#05090f;
-}
+  <style>
+    :root{
+      --ink:#fff;
+      --muted:#bcd0c7;
+      --cta1:#00f260;
+      --cta2:#0575e6;
+      --bg1:#040b0b;
+      --bg2:#0b1517;
+      --card: rgba(255,255,255,0.06);
+    }
 
-/* RESETEO */
-*{
-  margin:0; padding:0; box-sizing:border-box;
-  font-family: 'Poppins', sans-serif;
-}
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      font-family:Poppins, sans-serif;
+      background: var(--bg1);
+      color: var(--ink);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    section{padding:80px 22px;}
 
-body{
-  background: var(--bg);
-  color:white;
-}
+    /* ---------- LOGO ----------- */
+    .logo {
+      position: fixed;
+      top: 20px; left: 20px;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.2rem;
+      padding: 8px 14px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+    }
+    .logo img{
+      width: 34px; height: 34px;
+      object-fit: contain;
+    }
 
-/* ---------------- LOGO ---------------- */
+    /* ---------- HERO ----------- */
+    header{
+      padding:130px 22px 120px;
+      background: linear-gradient(135deg, #05150e, #0b2030);
+      text-align:center;
+      position: relative;
+    }
+    header h1{
+      font-size:clamp(2.2rem, 5vw, 3.8rem);
+      font-weight:800;
+      line-height:1.2;
+      margin-bottom:14px;
+    }
+    header p{
+      max-width:800px;
+      margin:0 auto 24px;
+      color: var(--muted);
+      font-size:1.05rem;
+    }
+    header img{
+      margin-top:30px;
+      width:100%;
+      max-width:380px;
+      border-radius:18px;
+      box-shadow:0 0 40px rgba(0,255,230,0.15);
+    }
+    .btn{
+      display:inline-block;
+      padding:14px 32px;
+      background: linear-gradient(90deg, var(--cta1), var(--cta2));
+      border-radius:999px;
+      font-weight:700;
+      text-decoration:none;
+      color:#000;
+      margin-top:15px;
+      font-size:1rem;
+      transition: .25s;
+    }
+    .btn:hover{ transform:scale(1.05); }
 
-.logo-box{
-  display:inline-flex;
-  align-items:center;
-  gap:12px;
-  background:rgba(255,255,255,0.05);
-  padding:12px 20px;
-  border-radius:16px;
-  backdrop-filter:blur(8px);
-  margin-bottom:30px;
-}
+    /* ---------- TITULARES ---------- */
+    .title{
+      font-size:clamp(1.8rem, 3vw, 2.4rem);
+      font-weight:800;
+      text-align:center;margin-bottom:14px;
+    }
+    .subtitle{
+      text-align:center;
+      color:var(--muted);
+      font-size:1rem;
+      max-width:760px;
+      margin:0 auto 40px;
+    }
 
-.logo-box img{
-  height:38px;
-}
+    /* ---------- CARDS ---------- */
+    .card{
+      background: var(--card);
+      padding:28px;
+      border-radius:16px;
+      margin-bottom:24px;
+      border:1px solid rgba(255,255,255,0.06);
+    }
+    .card h3{ font-size:1.35rem; margin-bottom:10px; }
+    .card p{ color:var(--muted); }
 
-/* ---------------- HERO ---------------- */
+    /* ---------- GRID ---------- */
+    .grid2{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+      gap:28px;
+      max-width:1200px;
+      margin:0 auto;
+    }
 
-header{
-  text-align:center;
-  padding:160px 20px 120px;
-  background:linear-gradient(160deg, #000, #07101b 40%, #000b16);
-}
+    /* ---------- IMÁGENES 9:16 ---------- */
+    .mockup{
+      width:100%;
+      aspect-ratio:9/16;
+      object-fit:cover;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,0.1);
+      box-shadow:0 0 20px rgba(0,255,200,0.15);
+    }
 
-header h1{
-  font-size:clamp(2.4rem, 6vw, 4rem);
-  font-weight:800;
-  line-height:1.2;
-}
+    /* ---------- FAQ ---------- */
+    details{
+      background:rgba(255,255,255,0.05);
+      padding:18px 20px;
+      border-radius:12px;
+      margin-bottom:12px;
+      border:1px solid rgba(255,255,255,0.08);
+      cursor:pointer;
+    }
+    summary{
+      font-weight:600;
+      font-size:1.05rem;
+    }
+    details p{
+      margin-top:12px;
+      color:var(--muted);
+    }
 
-header p{
-  margin-top:16px;
-  font-size:1.15rem;
-  max-width:700px;
-  margin-left:auto;
-  margin-right:auto;
-  color:var(--muted);
-}
+    /* ---------- FOOTER ---------- */
+    footer{
+      text-align:center;
+      padding:40px 20px;
+      background:#000;
+      font-size:.9rem;
+      color:#888;
+    }
 
-/* HERO IMAGE */
-
-.hero-image-container{
-  margin:38px auto 35px;
-  display:flex;
-  justify-content:center;
-}
-
-.hero-image{
-  width:100%;
-  max-width:340px;
-  border-radius:18px;
-  object-fit:cover;
-  box-shadow:0 15px 40px rgba(0,0,0,0.45);
-}
-
-/* BOTÓN CTA */
-
-.btn{
-  display:inline-block;
-  padding:16px 36px;
-  background:var(--cta);
-  color:black;
-  font-weight:700;
-  border-radius:40px;
-  text-decoration:none;
-  transition:0.25s;
-  margin-top:10px;
-}
-
-.btn:hover{
-  transform:translateY(-4px);
-  box-shadow:0px 10px 25px rgba(0,255,150,0.35);
-}
-
-/* ---------------- SECCIONES ---------------- */
-
-.section{
-  padding:80px 20px;
-  max-width:1200px;
-  margin:auto;
-}
-
-.section-title{
-  text-align:center;
-  font-size:2.3rem;
-  font-weight:800;
-  margin-bottom:16px;
-}
-
-.section-sub{
-  color:var(--muted);
-  text-align:center;
-  max-width:780px;
-  margin:0 auto 40px;
-  font-size:1rem;
-}
-
-/* CARDS EJEMPLOS */
-
-.examples{
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
-  gap:25px;
-}
-
-.card{
-  background:#0e1620;
-  border-radius:18px;
-  padding:16px;
-  overflow:hidden;
-  border:1px solid rgba(255,255,255,0.07);
-}
-
-.card img{
-  width:100%;
-  height:420px;
-  object-fit:cover;
-  border-radius:14px;
-}
-
-.card h3{
-  margin-top:12px;
-  font-weight:600;
-}
-
-/* ---------------- PLANES ---------------- */
-
-.plan-box{
-  background:#0c1219;
-  border-radius:18px;
-  padding:32px;
-  max-width:650px;
-  margin:0 auto;
-  border:1px solid rgba(255,255,255,0.08);
-}
-
-.plan-title{
-  font-size:1.8rem;
-  font-weight:700;
-  text-align:center;
-  margin-bottom:18px;
-}
-
-.plan-price{
-  font-size:2.8rem;
-  font-weight:800;
-  color:var(--cta);
-  text-align:center;
-}
-
-.plan-desc{
-  color:var(--muted);
-  text-align:center;
-  margin-bottom:22px;
-  font-size:1rem;
-}
-
-.plan-box ul{
-  margin-top:20px;
-  line-height:2;
-  font-size:1rem;
-}
-
-/* FOOTER */
-
-footer{
-  text-align:center;
-  padding:40px;
-  color:var(--muted);
-  font-size:0.9rem;
-}
-
-</style>
+  </style>
 </head>
 
 <body>
 
-<!-- ================= HERO ================= -->
+<!-- LOGO -->
+<a class="logo">
+  <img src="logo.png" alt="logo">
+  CL Tech Solutions
+</a>
+
+<!-- HERO -->
 <header>
-  <div class="logo-box">
-    <img src="logo.png" alt="CL Tech Solutions">
-    <span>CL TECH SOLUTIONS</span>
-  </div>
+  <h1>El Menú Digital que hará crecer tu restaurante en 2026</h1>
+  <p>Instalación inmediata en 24 horas. Actualizaciones ilimitadas. Tu negocio se vuelve moderno, rápido y eficiente. Empieza con solo <b>$12 al mes</b>.</p>
+  <a href="#planes" class="btn">Quiero instalar mi Menú Digital</a>
 
-  <h1>Menú Digital Profesional<br>Instalado en 24 Horas</h1>
-
-  <p>
-    Actualizaciones ilimitadas, soporte completo y diseño moderno para que tu restaurante
-    empiece a recibir pedidos hoy mismo por WhatsApp.
-  </p>
-
-  <div class="hero-image-container">
-    <img src="hero-pedido.jpg" class="hero-image" alt="Cliente usando el menú digital">
-  </div>
-
-  <a href="#planes" class="btn">Ver planes</a>
+  <img src="hero-pedido.png" alt="Cliente haciendo pedido digital">
 </header>
 
-<!-- ================= EJEMPLOS ================= -->
+<!-- ¿QUÉ ES UN MENÚ DIGITAL PROFESIONAL? -->
+<section>
+  <h2 class="title">¿Qué es un Menú Digital Profesional?</h2>
+  <p class="subtitle">Es una versión moderna y 100% optimizada de tu carta tradicional. Funciona en cualquier celular, carga rápido, organiza tu menú, agrega fotos y permite enviar pedidos directo a WhatsApp.</p>
 
-<section class="section">
-  <h2 class="section-title">Ejemplos de Menús Digitales</h2>
-  <p class="section-sub">Así se verá tu negocio cuando instalemos tu menú digital.</p>
-
-  <div class="examples">
+  <div class="grid2">
     <div class="card">
-      <img src="menu-demo-1.jpg" alt="Ejemplo menú digital 1">
-      <h3>Restaurante / Comida Rápida</h3>
+      <h3>📱 Fácil de usar</h3>
+      <p>Navegación intuitiva. Tus clientes encuentran lo que quieren en segundos.</p>
     </div>
 
     <div class="card">
-      <img src="menu-demo-2.jpg" alt="Ejemplo menú digital 2">
-      <h3>Heladería / Postres</h3>
+      <h3>⚡ Rápido y siempre disponible</h3>
+      <p>No depende de apps externas. Funciona 24/7 en tu propio enlace.</p>
+    </div>
+
+    <div class="card">
+      <h3>🛒 Pedido directo</h3>
+      <p>El cliente selecciona → envía → llega a tu WhatsApp en formato ordenado.</p>
+    </div>
+
+    <div class="card">
+      <h3>🎨 Visual y moderno</h3>
+      <p>Productos con fotos en alta calidad, precios claros y combos destacados.</p>
     </div>
   </div>
 </section>
 
-<!-- ================= PLANES ================= -->
+<!-- POR QUÉ TU RESTAURANTE LO NECESITA HOY -->
+<section>
+  <h2 class="title">¿Por qué tu restaurante necesita esto HOY?</h2>
+  <p class="subtitle">Los clientes ya no quieren leer cartas impresas. Quieren rapidez, claridad y un proceso fácil. Esto aumenta ventas.</p>
 
-<section id="planes" class="section">
-  <div class="plan-box">
+  <div class="grid2">
+    <div class="card">
+      <h3>✔️ Aumenta el ticket promedio</h3>
+      <p>Al ver fotos, los clientes piden más.</p>
+    </div>
 
-    <h2 class="plan-title">Plan Menú Digital Profesional</h2>
+    <div class="card">
+      <h3>✔️ Reduce errores</h3>
+      <p>Pedidos llegan claros, sin confusiones.</p>
+    </div>
 
-    <p class="plan-price">$12<span style="font-size:1.2rem">/mes</span></p>
-    <p class="plan-desc">Contrato mínimo 1 año.</p>
+    <div class="card">
+      <h3>✔️ Menos tiempo del mesero</h3>
+      <p>Los clientes revisan solos. Tu equipo se dedica a atender.</p>
+    </div>
 
-    <ul>
-      <li>✔ Instalación inmediata en 24h</li>
-      <li>✔ Actualizaciones ilimitadas</li>
-      <li>✔ Hosting incluido</li>
-      <li>✔ Soporte completo</li>
-      <li>✔ Subdominio gratuito<br><small>tu-negocio.crisslombeida.com</small></li>
-      <li>✔ O usa tu dominio propio por $60/año</li>
-    </ul>
+    <div class="card">
+      <h3>✔️ Perfecto para publicidad</h3>
+      <p>Comparte tu menú en redes sociales, Google Maps y WhatsApp.</p>
+    </div>
+  </div>
+</section>
 
-    <div style="text-align:center; margin-top:25px;">
-      <a href="https://wa.me/593990945636" class="btn">Quiero contratar</a>
+<!-- DOMINIO VS SUBDOMINIO -->
+<section id="dominio">
+  <h2 class="title">¿Dominio propio o Subdominio?</h2>
+  <p class="subtitle">Tú decides. Ambos funcionan, pero uno te vuelve MARCA.</p>
+
+  <div class="grid2">
+
+    <div class="card">
+      <h3>🔥 Dominio propio (recomendado)</h3>
+      <p>Ej: <b>www.panchosykombos.com</b></p>
+      <p>
+        ✔️ Se ve profesional  
+        ✔️ Fortalece tu marca  
+        ✔️ Permite futuras campañas  
+      </p>
+      <p><b>Precio: $60 / año</b></p>
+    </div>
+
+    <div class="card">
+      <h3>⭐ Subdominio GRATIS</h3>
+      <p>Ej: <b>panchosykombos.crisslombeida.com</b></p>
+      <p>
+        ✔️ Sin costo  
+        ✔️ Instalación inmediata  
+        ✔️ Ideal para empezar  
+      </p>
+      <p><b>Mensualidad: $12</b></p>
     </div>
 
   </div>
 </section>
 
-<!-- ================= FOOTER ================= -->
+<!-- LO QUE INCLUYE -->
+<section id="planes">
+  <h2 class="title">Lo que incluye tu plan</h2>
+  <p class="subtitle">Todo lo necesario para operar desde el primer día.</p>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>🚀 Instalación en 24 horas</h3>
+      <p>Tu menú listo mañana mismo.</p>
+    </div>
+
+    <div class="card">
+      <h3>♻️ Actualizaciones ilimitadas</h3>
+      <p>Cambios de productos, precios y fotos.</p>
+    </div>
+
+    <div class="card">
+      <h3>📦 Hosting incluido</h3>
+      <p>Tu menú nunca se cae.</p>
+    </div>
+
+    <div class="card">
+      <h3>🧾 Soporte y mantenimiento</h3>
+      <p>Nosotros lo manejamos TODO.</p>
+    </div>
+  </div>
+</section>
+
+<!-- POR QUÉ SOMOS DIFERENTES -->
+<section>
+  <h2 class="title">¿Por qué somos diferentes?</h2>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>💡 Diseño tipo startup</h3>
+      <p>Moderno, rápido y profesional.</p>
+    </div>
+
+    <div class="card">
+      <h3>🔍 Optimizado para vender</h3>
+      <p>No es solo una carta. Es una herramienta de ventas.</p>
+    </div>
+
+    <div class="card">
+      <h3>🤖 IA en tu ecosistema</h3>
+      <p>Preparado para integrar agentes conversacionales.</p>
+    </div>
+
+    <div class="card">
+      <h3>📈 Escalable</h3>
+      <p>Puede crecer hasta sistema de pedidos completo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PASOS -->
+<section>
+  <h2 class="title">Cómo funciona</h2>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>1️⃣ Pagas $12</h3>
+      <p>Activas tu menú y comenzamos la instalación.</p>
+    </div>
+
+    <div class="card">
+      <h3>2️⃣ Envíanos tus productos</h3>
+      <p>Fotos, nombres y precios.</p>
+    </div>
+
+    <div class="card">
+      <h3>3️⃣ Instalación en 24 horas</h3>
+      <p>Recibes tu enlace final y empieza a vender.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EJEMPLOS 9:16 -->
+<section>
+  <h2 class="title">Ejemplos visuales</h2>
+  <p class="subtitle">Así se verá tu menú digital en celular.</p>
+
+  <div class="grid2">
+    <img src="ejemplo1.png" class="mockup" alt="ejemplo 1">
+    <img src="ejemplo2.png" class="mockup" alt="ejemplo 2">
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section>
+  <h2 class="title">Lo que dicen los negocios reales</h2>
+
+  <div class="grid2">
+
+    <div class="card">
+      <h3>“Mis ventas subieron”</h3>
+      <p>Los clientes ahora piden más porque ven las fotos. El menú es rapidísimo.</p>
+      <small>— Javier, Hamburgesas Don Lucho</small>
+    </div>
+
+    <div class="card">
+      <h3>“Me ahorra tiempo”</h3>
+      <p>Los meseros ya no tienen que explicar cada plato. El cliente entra y pide.</p>
+      <small>— María, Pizza Rosso</small>
+    </div>
+
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <h2 class="title">Preguntas frecuentes</h2>
+
+  <details>
+    <summary>¿Puedo empezar sin comprar dominio?</summary>
+    <p>Sí. Con subdominio gratis: tudominio.crisslombeida.com</p>
+  </details>
+
+  <details>
+    <summary>¿Cuánto cuesta al año?</summary>
+    <p>12 dólares mensuales. Total anual: $144.</p>
+  </details>
+
+  <details>
+    <summary>¿Puedo actualizar cuando quiera?</summary>
+    <p>Sí. Todas las actualizaciones son ilimitadas.</p>
+  </details>
+
+  <details>
+    <summary>¿Tarda mucho?</summary>
+    <p>24 horas después del pago.</p>
+  </details>
+
+</section>
+
+<!-- GARANTÍA -->
+<section>
+  <h2 class="title">Garantía CL Tech Solutions</h2>
+  <p class="subtitle">Si en 24 horas no tienes tu menú listo, te devolvemos tu dinero. Sin excusas.</p>
+</section>
+
+<!-- CTA FINAL -->
+<section style="text-align:center;padding:90px 22px;background:#031012;">
+  <h2 class="title">Instala tu Menú Digital HOY</h2>
+  <p class="subtitle">Empieza por solo $12. Instálalo mañana mismo.</p>
+  <a href="#planes" class="btn">Quiero activar mi menú</a>
+</section>
 
 <footer>
-  © 2024 CL Tech Solutions — Todos los derechos reservados.
+  © 2026 – CL Tech Solutions. Todos los derechos reservados.
 </footer>
 
 </body>
