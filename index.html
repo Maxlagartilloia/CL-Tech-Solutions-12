@@ -1,204 +1,439 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Menú Digital – Plan $12/mes | CL Tech Solutions</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
-    <style>
-        body { font-family: 'Poppins', sans-serif; }
-        .glow { text-shadow: 0 0 10px rgba(255,255,255,0.4); }
-        .btn-cta { animation: pulse 2s infinite; }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.04); }
-            100% { transform: scale(1); }
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Menú Digital – Plan 12 | CL Tech Solutions</title>
+
+<link rel="icon" type="image/png" href="https://i.postimg.cc/s2YtHvzB/IMG-0156.png">
+
+<link href="https://cdn.tailwindcss.com" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<style>
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: radial-gradient(circle at top, #0a0f19 0%, #000 60%);
+    color: white;
+    overflow-x: hidden;
+  }
+
+  /* Fondo futurista IA */
+  .bg-ia {
+    background-image: url('https://i.postimg.cc/43F8m5mp/futuristic-ai-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.55);
+  }
+
+  .glass {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.14);
+    backdrop-filter: blur(10px);
+  }
+
+  .btn-main {
+    background: linear-gradient(135deg, #11D7E3, #0fbac7);
+    padding: 14px 24px;
+    border-radius: 999px;
+    font-weight: 700;
+    color: #000;
+    text-align: center;
+    transition: all .2s;
+  }
+  .btn-main:hover { filter: brightness(1.1); }
+
+  .btn-ghost {
+    border-radius: 999px;
+    padding: 12px 22px;
+    border: 1px solid rgba(255,255,255,0.35);
+    color: white;
+    transition: .2s;
+  }
+  .btn-ghost:hover {
+    border-color: #11D7E3;
+    color: #11D7E3;
+  }
+
+  /* Cards */
+  .card {
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 16px;
+    background: rgba(255,255,255,.06);
+    padding: 22px;
+  }
+</style>
+
 </head>
+<body>
 
-<body class="bg-slate-950 text-white">
+<!-- HERO PRINCIPAL -->
+<section class="relative min-h-[92vh] flex items-center justify-center text-center">
 
-<!-- HERO -->
-<section class="relative w-full min-h-screen flex flex-col items-center justify-center px-6 text-center bg-gradient-to-b from-slate-900 to-black">
-    <h1 class="text-4xl md:text-5xl font-extrabold leading-tight glow">
-        Tu Menú Digital Profesional<br />
-        por solo <span class="text-emerald-400">$12/mes</span>
+  <!-- Fondo IA Futurista -->
+  <div class="absolute inset-0 bg-ia"></div>
+
+  <!-- Layer oscuro -->
+  <div class="absolute inset-0 bg-black/60"></div>
+
+  <!-- Contenido -->
+  <div class="relative z-10 max-w-3xl mx-auto px-6">
+
+    <!-- Sello gigante -->
+    <img src="https://i.postimg.cc/s2YtHvzB/IMG-0156.png"
+         class="mx-auto mb-6 opacity-90 w-40 md:w-56 drop-shadow-[0_0_30px_rgba(17,215,227,.55)]" />
+
+    <h1 class="text-3xl md:text-5xl font-extrabold leading-tight mb-4">
+      Tu <span class="text-[#11D7E3]">Menú Digital Profesional</span><br>
+      Instalado en menos de <span class="text-[#11D7E3]">24 horas</span>
     </h1>
 
-    <p class="text-slate-300 mt-4 text-lg max-w-2xl">
-        Un menú moderno, rápido y listo para recibir pedidos por WhatsApp.
-        Ideal para restaurantes, comidas rápidas y heladerías.
+    <p class="text-white/80 text-sm md:text-base max-w-xl mx-auto mb-6">
+      Hecho especialmente para restaurantes, comidas rápidas y heladerías que necesitan
+      <strong>vender más</strong> sin complicarse con tecnología.
     </p>
 
-    <!-- PRECIOS -->
-    <div class="bg-white/10 border border-white/20 backdrop-blur-xl rounded-2xl p-6 mt-8 max-w-md">
-        <p class="text-xl font-bold text-emerald-400">Setup inicial: $72</p>
-        <p class="text-slate-300 text-sm mt-1">Incluye instalación + hosting por 1 año</p>
-
-        <div class="mt-4 border-t border-white/10 pt-4">
-            <p class="text-3xl font-bold">+ $12/mes</p>
-            <p class="text-slate-400 text-sm">Contrato mínimo de 1 año</p>
-        </div>
+    <div class="flex flex-col sm:flex-row justify-center gap-4 mt-6">
+      <a href="#planes" class="btn-main">Ver precios</a>
+      <a href="#dominio" class="btn-ghost">¿Dominio o Subdominio?</a>
     </div>
 
-    <a href="#formulario" class="btn-cta mt-8 bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-4 px-8 rounded-xl shadow-xl transition">
-        QUIERO MI MENÚ DIGITAL
-    </a>
+  </div>
+
 </section>
 
-<!-- SECCION: MOCKUPS -->
-<section class="py-20 px-6 max-w-6xl mx-auto">
-    <h2 class="text-3xl font-bold text-center mb-10">Así lucirá tu Menú Digital</h2>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+<!-- SECCIÓN: DOMINIO VS SUBDOMINIO -->
+<section id="dominio" class="py-16 px-6 bg-black relative">
+  
+  <h2 class="text-3xl font-bold text-center mb-10">
+    ¿Dominio propio… o subdominio gratuito?
+  </h2>
 
-        <!-- Servicios -->
-        <div class="relative aspect-[9/16] rounded-xl overflow-hidden cursor-pointer border border-white/10 bg-slate-800"
-            onclick="openModal('Servicios Profesionales', ['mockup-servicios-1.jpg', 'mockup-servicios-2.jpg'])">
-            <img src="mockup-servicios-1.jpg" class="w-full h-full object-cover" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-3 flex flex-col justify-end">
-                <span class="text-xs font-bold text-emerald-400">Servicios</span>
-                <span class="text-[11px] text-slate-300">Ver modelo</span>
-            </div>
-        </div>
+  <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
 
-        <!-- Restaurante -->
-        <div class="relative aspect-[9/16] rounded-xl overflow-hidden cursor-pointer border border-white/10 bg-slate-800"
-            onclick="openModal('Restaurantes y Comidas', ['mockup-restaurante-1.jpg','mockup-restaurante-2.jpg'])">
-            <img src="mockup-restaurante-1.jpg" class="w-full h-full object-cover" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-3 flex flex-col justify-end">
-                <span class="text-xs font-bold text-orange-400">Restaurantes</span>
-                <span class="text-[11px] text-slate-300">Ver carrito</span>
-            </div>
-        </div>
+    <!-- DOMINIO -->
+    <div class="card">
+      <h3 class="text-xl font-bold mb-2 text-[#11D7E3]">Dominio Propio (Recomendado)</h3>
 
-        <!-- Heladería -->
-        <div class="relative aspect-[9/16] rounded-xl overflow-hidden cursor-pointer border border-white/10 bg-slate-800"
-            onclick="openModal('Heladerías y Postres', ['mockup-heladeria-1.jpg','mockup-heladeria-2.jpg'])">
-            <img src="mockup-heladeria-1.jpg" class="w-full h-full object-cover" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-3 flex flex-col justify-end">
-                <span class="text-xs font-bold text-pink-400">Heladerías</span>
-                <span class="text-[11px] text-slate-300">Ver modelo</span>
-            </div>
-        </div>
+      <p class="text-white/70 text-sm mb-3">
+        Tu marca con identidad real, profesional y confiable.
+      </p>
 
+      <ul class="space-y-1 text-sm text-white/80 mb-4">
+        <li>• www.tunegocio.com</li>
+        <li>• Recomendado para negocios que quieren crecer</li>
+        <li>• Queda registrado a tu nombre</li>
+        <li>• Aumenta tu credibilidad y tus ventas</li>
+      </ul>
+
+      <div class="text-center text-3xl font-extrabold mb-3">
+        <span class="text-[#11D7E3]">$60</span> / año
+      </div>
+
+      <p class="text-xs text-white/60 mb-4">
+        Incluye: Dominio + Hosting + Instalación + Mantenimiento 12 meses
+      </p>
+
+      <a href="#form" class="btn-main w-full block">Quiero mi dominio</a>
     </div>
+
+
+
+    <!-- SUBDOMINIO -->
+    <div class="card border-[#11D7E3]/50">
+      <h3 class="text-xl font-bold mb-2 text-white">Subdominio Gratuito</h3>
+
+      <p class="text-white/70 text-sm mb-3">
+        Ideal si quieres empezar hoy mismo sin pagar dominio.
+      </p>
+
+      <ul class="space-y-1 text-sm text-white/80 mb-4">
+        <li>• www.tunegocio.crisslombeida.com</li>
+        <li>• Instalación inmediata</li>
+        <li>• No necesitas comprar nada para comenzar</li>
+        <li>• Puedes actualizar a dominio propio cuando quieras</li>
+      </ul>
+
+      <div class="text-center text-3xl font-extrabold mb-3">
+        <span class="text-[#11D7E3]">Gratis</span>
+      </div>
+
+      <p class="text-xs text-white/60 mb-4">
+        Solo pagas el plan mensual de mantenimiento.
+      </p>
+
+      <a href="#form" class="btn-ghost w-full block border-[#11D7E3] text-[#11D7E3]">
+        Quiero empezar sin dominio
+      </a>
+    </div>
+
+  </div>
+
+  <p class="text-center text-white/70 text-sm max-w-2xl mx-auto mt-10">
+    💡 *Si quieres crecer en 2025, el dominio propio NO es un gasto.  
+    Es la forma más barata de darle identidad y prestigio real a tu negocio.*
+  </p>
+
 </section>
 
-<!-- DOMINIO VS SUBDOMINIO -->
-<section class="py-20 px-6 bg-slate-900/40 border-t border-white/10">
-    <h2 class="text-3xl font-bold text-center mb-10">¿Dominio propio o Subdominio?</h2>
 
-    <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+<!-- SECCIÓN DE PLANES (PRECIO + PERSUASIÓN) -->
+<section id="planes" class="py-20 bg-[#0b0f17] px-6">
+  <h2 class="text-3xl font-bold text-center mb-10">Planes y Precios</h2>
 
-        <!-- DOMINIO PROPIO -->
-        <div class="p-6 bg-white/10 rounded-2xl border border-white/20">
-            <h3 class="text-xl font-bold text-emerald-400 mb-3">Dominio propio (.com)</h3>
-            <p class="text-slate-300 text-sm mb-4">
-                Si compras dominio, tu marca se ve profesional, seria y lista para posicionarse.
-            </p>
+  <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+          <!-- PLAN 12 -->
+    <div class="card border-[#11D7E3]/40">
+      <h3 class="text-xl font-bold text-[#11D7E3] mb-1">PLAN 12 · Suscripción Mensual</h3>
+      <p class="text-white/70 text-sm mb-4">
+        Para restaurantes, comidas rápidas y heladerías que quieren vender HOY mismo.
+      </p>
 
-            <p class="bg-black/40 p-3 rounded-lg text-sm text-slate-200 font-mono">
-                www.tunegocio.com
-            </p>
+      <div class="text-center text-5xl font-extrabold mb-2 leading-tight">
+        <span class="text-[#11D7E3]">$12</span>
+        <span class="text-white text-base font-medium">/ mes</span>
+      </div>
 
-            <p class="text-slate-400 text-xs mt-3">
-                Recomendado para negocios que quieren crecer y ser encontrados en Google.
-            </p>
-        </div>
+      <p class="text-xs text-white/60 text-center mb-4">
+        + Pago inicial único de <strong>$12</strong> por configuración
+      </p>
 
-        <!-- SUBDOMINIO -->
-        <div class="p-6 bg-white/5 rounded-2xl border border-white/10">
-            <h3 class="text-xl font-bold text-blue-400 mb-3">Subdominio GRATIS</h3>
-            <p class="text-slate-300 text-sm mb-4">
-                Si no deseas comprar dominio, puedes iniciar YA mismo con un subdominio gratuito.
-            </p>
+      <ul class="space-y-2 text-sm text-white/80 mb-6">
+        <li>• Actualizaciones ilimitadas (cambios de precios, platos nuevos, fotos nuevas)</li>
+        <li>• Hosting incluido 24/7</li>
+        <li>• Soporte técnico directo por WhatsApp</li>
+        <li>• Tu menú se instala en menos de 24 horas</li>
+        <li>• Botón de pedidos por WhatsApp integrado</li>
+        <li>• Ideal para QR en mesas</li>
+      </ul>
 
-            <p class="bg-black/40 p-3 rounded-lg text-sm text-slate-200 font-mono break-all">
-                tunegocio.crisslombeida.com
-            </p>
-
-            <p class="text-slate-400 text-xs mt-3">
-                Ideal para emprendedores que quieren empezar rápido sin invertir mucho.
-            </p>
-        </div>
-
+      <a href="#form" class="btn-main block w-full">
+        Activar mi Plan Mensual
+      </a>
     </div>
 
-    <div class="text-center mt-10">
-        <a href="#formulario" class="btn-cta bg-emerald-500 hover:bg-emerald-600 py-4 px-8 rounded-xl font-bold">
-            INICIAR AHORA
-        </a>
+
+    <!-- PLAN DOMINIO + MANTENIMIENTO -->
+    <div class="card">
+      <h3 class="text-xl font-bold text-white mb-1">Dominio Propio + Hosting + Mantenimiento</h3>
+      <p class="text-white/70 text-sm mb-4">
+        Para negocios con marca establecida que quieren un sitio 100% profesional.
+      </p>
+
+      <div class="text-center text-5xl font-extrabold mb-2 leading-tight">
+        <span class="text-[#11D7E3]">$60</span>
+        <span class="text-white text-base font-medium">/ año</span>
+      </div>
+
+      <p class="text-xs text-white/60 text-center mb-4">
+        Incluye instalación + hosting + dominio + mantenimiento anual
+      </p>
+
+      <ul class="space-y-2 text-sm text-white/80 mb-6">
+        <li>• Dominio .com o disponible a tu nombre</li>
+        <li>• Marca profesional y confiable</li>
+        <li>• Mayor conversión y credibilidad</li>
+        <li>• 1 año de hosting incluido</li>
+        <li>• Actualizaciones ilimitadas</li>
+        <li>• Ideal para crecer a lo grande</li>
+      </ul>
+
+      <a href="#form" class="btn-ghost block w-full border-[#11D7E3] text-[#11D7E3]">
+        Comprar Dominio Profesional
+      </a>
     </div>
+
+  </div>
 </section>
+
+
+<!-- QUÉ INCLUYE -->
+<section class="py-20 px-6 bg-black">
+  <h2 class="text-3xl font-bold text-center mb-10">¿Qué incluye tu Menú Digital?</h2>
+
+  <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
+
+    <div class="card">
+      <h4 class="font-bold text-[#11D7E3] mb-2">Menú Profesional 9:16</h4>
+      <p class="text-white/70 text-sm">Diseño pensado para venta inmediata. Compatible con QR.</p>
+    </div>
+
+    <div class="card">
+      <h4 class="font-bold text-[#11D7E3] mb-2">Actualizaciones Ilimitadas</h4>
+      <p class="text-white/70 text-sm">Cambios de fotos, precios, platos nuevos… ¡sin costo extra!</p>
+    </div>
+
+    <div class="card">
+      <h4 class="font-bold text-[#11D7E3] mb-2">Pedidos por WhatsApp</h4>
+      <p class="text-white/70 text-sm">Haz que tu cliente vea → elija → ordene sin confusión.</p>
+    </div>
+
+    <div class="card">
+      <h4 class="font-bold text-[#11D7E3] mb-2">Hosting Seguro</h4>
+      <p class="text-white/70 text-sm">Tu menú activo 24/7 sin que tengas que preocuparte.</p>
+    </div>
+
+    <div class="card">
+      <h4 class="font-bold text-[#11D7E3] mb-2">Soporte Premium</h4>
+      <p class="text-white/70 text-sm">Atención directa por WhatsApp para todo lo técnico.</p>
+    </div>
+
+    <div class="card">
+      <h4 class="font-bold text-[#11D7E3] mb-2">Entrega en 24h</h4>
+      <p class="text-white/70 text-sm">Tu menú listo más rápido de lo que esperas.</p>
+    </div>
+
+  </div>
+</section>
+
 
 <!-- PASOS -->
-<section class="py-20 px-6 max-w-5xl mx-auto">
-    <h2 class="text-3xl font-bold text-center mb-10">Solo 3 pasos para activar tu menú</h2>
+<section class="py-20 bg-[#0b0f17] px-6">
+  <h2 class="text-3xl font-bold text-center mb-8">Así de fácil empiezas hoy</h2>
 
-    <div class="grid md:grid-cols-3 gap-8">
+  <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-8">
 
-        <div class="p-6 bg-white/5 rounded-xl border border-white/10">
-            <h3 class="text-xl font-bold mb-2">1. Instala tu menú</h3>
-            <p class="text-sm text-slate-300">
-                Pagas el setup de <strong>$72</strong> e instalamos todo por ti: hosting, dominio o subdominio.
-            </p>
-        </div>
-
-        <div class="p-6 bg-white/5 rounded-xl border border-white/10">
-            <h3 class="text-xl font-bold mb-2">2. Personalizamos tu menú</h3>
-            <p class="text-sm text-slate-300">
-                Enviamos tu menú digital listo: fotos, precios, categorías y botón de pedidos.
-            </p>
-        </div>
-
-        <div class="p-6 bg-white/5 rounded-xl border border-white/10">
-            <h3 class="text-xl font-bold mb-2">3. Pagas $12/mes</h3>
-            <p class="text-sm text-slate-300">
-                Incluye mantenimiento, cambios de platos y soporte mensual.
-            </p>
-        </div>
+    <div class="card glass">
+      <h3 class="text-xl font-bold text-[#11D7E3] mb-2">1. Envías tu información</h3>
+      <p class="text-white/70 text-sm">Nombre del negocio, ciudad y fotos opcionales.</p>
     </div>
+
+    <div class="card glass">
+      <h3 class="text-xl font-bold text-[#11D7E3] mb-2">2. Elegimos tu dominio</h3>
+      <p class="text-white/70 text-sm">
+        Dominio profesional o subdominio gratuito. Tú eliges cómo empezar.
+      </p>
+    </div>
+
+    <div class="card glass">
+      <h3 class="text-xl font-bold text-[#11D7E3] mb-2">3. Instalación 24h</h3>
+      <p class="text-white/70 text-sm">Recibes tu menú listo, con enlace para enviar a clientes.</p>
+    </div>
+
+  </div>
+
+  <div class="text-center mt-12">
+    <a href="#form" class="btn-main text-lg px-10 py-4 inline-block">
+      Quiero empezar ahora
+    </a>
+  </div>
+
 </section>
 
-<!-- FORMULARIO SIMPLIFICADO -->
-<section id="formulario" class="py-20 px-6 bg-slate-900 border-t border-white/10">
-    <h2 class="text-3xl font-bold text-center mb-10">Solicitar Menú Digital</h2>
 
-    <form class="max-w-xl mx-auto bg-white/5 p-8 rounded-2xl border border-white/20 backdrop-blur">
-
-        <label class="block mb-4">
-            <span class="text-sm">Nombre del negocio</span>
-            <input class="w-full mt-1 p-3 rounded-lg bg-white/10 border border-white/20" />
-        </label>
-
-        <label class="block mb-4">
-            <span class="text-sm">WhatsApp</span>
-            <input class="w-full mt-1 p-3 rounded-lg bg-white/10 border border-white/20" />
-        </label>
-
-        <label class="block mb-6">
-            <span class="text-sm">Ciudad</span>
-            <input class="w-full mt-1 p-3 rounded-lg bg-white/10 border border-white/20" />
-        </label>
-
-        <button class="w-full py-3 bg-emerald-500 hover:bg-emerald-600 rounded-xl font-bold">
-            ENVIAR SOLICITUD
-        </button>
-    </form>
-</section>
-
-<!-- WHATSAPP FLOAT -->
-<a href="https://wa.me/593990945636?text=Quiero%20activar%20mi%20menú%20digital" 
-   class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-xl">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-width="2" d="M20 12a8 8 0 10-3.1 6.3L21 21l-2-5.1A7.96 7.96 0 0020 12z" />
-    </svg>
+<!-- BOTÓN FLOTANTE WHATSAPP -->
+<a href="https://wa.me/5930999999999?text=Hola%20quiero%20activar%20mi%20Menú%20Digital"
+   class="fixed bottom-6 right-6 z-50 bg-[#11D7E3] p-4 rounded-full shadow-xl hover:scale-110 transition transform">
+   <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-7 h-7 text-black" viewBox="0 0 24 24">
+     <path d="M20.52 3.48A11.8 11.8 0 0012 0C5.37 0 .07 5.3.07 11.87c0 2.09.55 4.1 1.6 5.9L0 24l6.4-1.64a11.9 11.9 0 005.6 1.42h.01c6.63 0 11.93-5.3 11.93-11.87 0-3.17-1.24-6.15-3.42-8.43zM12 21.3c-1.73 0-3.44-.47-4.93-1.35l-.35-.21-3.8.97 1.02-3.7-.23-.38a9.53 9.53 0 01-1.46-5.17C2.25 6.65 6.6 2.3 12 2.3c2.56 0 4.97 1 6.78 2.82a9.44 9.44 0 012.8 6.74c0 5.4-4.35 9.74-9.72 9.74zm5.43-7.06c-.3-.15-1.76-.86-2.03-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.78-1.68-2.08-.17-.3-.02-.46.13-.6.14-.14.3-.35.46-.52.16-.17.21-.3.32-.5.1-.2.05-.37-.03-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.23 3.1.15.2 2.1 3.2 5.08 4.47.71.31 1.27.5 1.7.64.72.23 1.37.2 1.88.12.57-.08 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.08-.12-.28-.2-.58-.35z"/>
+   </svg>
 </a>
+
+
+<!-- FORMULARIO (INICIO DE PARTE 3) -->
+<section id="form" class="py-20 px-6 bg-black">
+  <h2 class="text-3xl font-bold text-center mb-4">Solicita tu Menú Digital</h2>
+  <p class="text-center text-white/70 max-w-xl mx-auto mb-10 text-sm">
+    Llena este formulario y te escribimos por WhatsApp para activar tu instalación.
+  </p>
+
+  <div class="max-w-xl mx-auto card glass p-8">
+          <form name="plan12-form" method="POST" data-netlify="true" class="space-y-5">
+      <input type="hidden" name="form-name" value="plan12-form" />
+
+      <div>
+        <label class="text-white/70 text-sm mb-1 block">Nombre completo *</label>
+        <input type="text" name="nombre" required class="input" placeholder="Ej: Juan Pérez">
+      </div>
+
+      <div>
+        <label class="text-white/70 text-sm mb-1 block">WhatsApp *</label>
+        <input type="text" name="whatsapp" required class="input" placeholder="099 000 0000">
+      </div>
+
+      <div>
+        <label class="text-white/70 text-sm mb-1 block">Nombre del negocio *</label>
+        <input type="text" name="negocio" required class="input" placeholder="Ej: Pizzería Don Lucho">
+      </div>
+
+      <div>
+        <label class="text-white/70 text-sm mb-1 block">Ciudad *</label>
+        <input type="text" name="ciudad" required class="input" placeholder="Ej: Quito">
+      </div>
+
+      <div>
+        <label class="text-white/70 text-sm mb-1 block">Tipo de página *</label>
+        <select name="tipo" required class="input">
+          <option value="" disabled selected>Selecciona una opción</option>
+          <option>Restaurante</option>
+          <option>Comida rápida</option>
+          <option>Heladería</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn-main w-full py-4 text-base font-bold">
+        Enviar solicitud
+      </button>
+
+      <p class="text-white/50 text-xs text-center mt-2">
+        Recibirás respuesta entre 5 a 15 minutos (horario laboral).
+      </p>
+    </form>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="py-10 bg-[#03070d] border-t border-white/10">
+  <div class="max-w-6xl mx-auto text-center text-white/50 text-xs">
+    <p>© 2025 · CL Tech Solutions · Todos los derechos reservados</p>
+    <p class="mt-1">Menú Digital · Embudos · Automatizaciones · IA para negocios</p>
+  </div>
+</footer>
+
+
+<!-- BOTÓN FLOTANTE WHATSAPP -->
+<a href="https://wa.me/5930999999999?text=Hola%20quiero%20activar%20mi%20Plan%2012"
+   class="fixed bottom-6 right-6 z-50 bg-[#11D7E3] p-4 rounded-full shadow-xl hover:scale-110 transition transform">
+   <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-7 h-7 text-black" viewBox="0 0 24 24">
+     <path d="M20.52 3.48A11.8 11.8 0 0012 0C5.37 0 .07 5.3.07 11.87c0 2.09.55 4.1 1.6 5.9L0 24l6.4-1.64a11.9 11.9 0 005.6 1.42h.01c6.63 0 11.93-5.3 11.93-11.87 0-3.17-1.24-6.15-3.42-8.43zM12 21.3c-1.73 0-3.44-.47-4.93-1.35l-.35-.21-3.8.97 1.02-3.7-.23-.38a9.53 9.53 0 01-1.46-5.17C2.25 6.65 6.6 2.3 12 2.3c2.56 0 4.97 1 6.78 2.82a9.44 9.44 0 012.8 6.74c0 5.4-4.35 9.74-9.72 9.74zm5.43-7.06c-.3-.15-1.76-.86-2.03-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.78-1.68-2.08-.17-.3-.02-.46.13-.6.14-.14.3-.35.46-.52.16-.17.21-.3.32-.5.1-.2.05-.37-.03-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.23 3.1.15.2 2.1 3.2 5.08 4.47.71.31 1.27.5 1.7.64.72.23 1.37.2 1.88.12.57-.08 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.08-.12-.28-.2-.58-.35z"/>
+   </svg>
+</a>
+
+
+<!-- SCRIPTS FINALES -->
+<script>
+  // Animación simple al hacer scroll (fade in)
+  const cards = document.querySelectorAll('.card');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = 1;
+        entry.target.style.transform = "translateY(0)";
+      }
+    });
+  }, { threshold: 0.2 });
+
+  cards.forEach(card => {
+    card.style.opacity = 0;
+    card.style.transform = "translateY(30px)";
+    card.style.transition = "all 0.7s ease";
+    observer.observe(card);
+  });
+
+  // Smooth scroll para botones internos
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+      const target = document.querySelector(this.getAttribute("href"));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
+      
