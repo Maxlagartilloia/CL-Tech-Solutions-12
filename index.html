@@ -3,423 +3,505 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Menú Digital PRO | CL Tech Solutions</title>
+  <title>Menú Digital Profesional | CL Tech Solutions</title>
 
-  <!-- Fuentes y estilos -->
+  <!-- Fuentes y librerías -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 
+  <!-- ESTILOS GENERALES -->
   <style>
     :root{
-      --ink:#fff;
-      --muted:#bcd0c7;
-      --cta1:#00f260;
-      --cta2:#0575e6;
-      --bg1:#040b0b;
-      --bg2:#0b1517;
+      --clr1:#00f2ea;
+      --clr2:#0575e6;
+      --clr3:#0a192f;
       --card: rgba(255,255,255,0.06);
+      --text:#ffffff;
+      --muted:#d0d0d0;
+      --accent:#00e5ff;
     }
 
-    *{margin:0;padding:0;box-sizing:border-box}
+    *{margin:0;padding:0;box-sizing:border-box;}
     body{
-      font-family:Poppins, sans-serif;
-      background: var(--bg1);
-      color: var(--ink);
-      line-height: 1.6;
-      overflow-x: hidden;
+      font-family: "Poppins", sans-serif;
+      background:#0c0f14;
+      color:var(--text);
+      overflow-x:hidden;
     }
-    section{padding:80px 22px;}
 
-    /* ---------- LOGO ----------- */
-    .logo {
+    /* FONDO FLOTANTE ESTILO BOT & LANDING */
+    .bg-floating{
       position: fixed;
-      top: 20px; left: 20px;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 700;
-      font-size: 1.2rem;
-      padding: 8px 14px;
-      background: rgba(255,255,255,0.08);
-      border-radius: 10px;
-      backdrop-filter: blur(10px);
-    }
-    .logo img{
-      width: 34px; height: 34px;
-      object-fit: contain;
+      top:0; left:0;
+      width:100%; height:100%;
+      background:url('bg-ia.png') center/cover no-repeat;
+      opacity:.22;
+      filter: blur(4px);
+      z-index:-1;
     }
 
-    /* ---------- HERO ----------- */
-    header{
-      padding:130px 22px 120px;
-      background: linear-gradient(135deg, #05150e, #0b2030);
-      text-align:center;
-      position: relative;
+    /* LOGO */
+    .logo-box{
+      position:absolute;
+      top:20px; left:20px;
+      z-index:10;
+      background:rgba(0,0,0,.4);
+      backdrop-filter: blur(6px);
+      padding:10px 18px;
+      border-radius:12px;
+      font-weight:700;
+      letter-spacing:1px;
+      display:flex;
+      align-items:center;
+      gap:10px;
     }
+    .logo-box img{
+      height:36px;
+    }
+
+    /* HERO NUEVO COMPLETO */
+    header{
+      position:relative;
+      width:100%;
+      padding:160px 20px 140px;
+      text-align:center;
+      background:rgba(0,0,0,0.45);
+      backdrop-filter: blur(6px);
+    }
+
+    header::before{
+      content:"";
+      position:absolute;
+      top:0; left:0; right:0; bottom:0;
+      background:url('hero-full.jpg') center/cover no-repeat;
+      opacity:0.22;
+      z-index:-1;
+    }
+
     header h1{
       font-size:clamp(2.2rem, 5vw, 3.8rem);
       font-weight:800;
       line-height:1.2;
-      margin-bottom:14px;
+      margin-bottom:15px;
     }
+
     header p{
-      max-width:800px;
-      margin:0 auto 24px;
-      color: var(--muted);
-      font-size:1.05rem;
+      max-width:750px;
+      margin:0 auto;
+      font-size:1.1rem;
+      opacity:.9;
+      margin-bottom:28px;
     }
-    header img{
-      margin-top:30px;
-      width:100%;
-      max-width:380px;
-      border-radius:18px;
-      box-shadow:0 0 40px rgba(0,255,230,0.15);
-    }
-    .btn{
+
+    .cta-main{
       display:inline-block;
-      padding:14px 32px;
-      background: linear-gradient(90deg, var(--cta1), var(--cta2));
+      padding:14px 28px;
+      background:linear-gradient(90deg, var(--clr1), var(--clr2));
       border-radius:999px;
+      color:#fff;
       font-weight:700;
       text-decoration:none;
-      color:#000;
-      margin-top:15px;
       font-size:1rem;
-      transition: .25s;
+      transition:.3s ease;
     }
-    .btn:hover{ transform:scale(1.05); }
+    .cta-main:hover{ transform:translateY(-3px); }
 
-    /* ---------- TITULARES ---------- */
-    .title{
-      font-size:clamp(1.8rem, 3vw, 2.4rem);
-      font-weight:800;
-      text-align:center;margin-bottom:14px;
+    /* CONTENEDORES DE SECCIONES */
+    section{
+      padding:80px 22px;
+      width:100%;
+      max-width:1200px;
+      margin:auto;
     }
-    .subtitle{
+
+    .section-title{
       text-align:center;
-      color:var(--muted);
-      font-size:1rem;
-      max-width:760px;
-      margin:0 auto 40px;
+      font-size:clamp(1.8rem,3vw,2.6rem);
+      font-weight:800;
+      margin-bottom:10px;
+    }
+    .section-sub{
+      text-align:center;
+      max-width:780px;
+      margin:0 auto 35px;
+      opacity:.85;
     }
 
-    /* ---------- CARDS ---------- */
+    /* TARJETAS BÁSICAS */
     .card{
-      background: var(--card);
+      background:var(--card);
+      border:1px solid rgba(255,255,255,0.06);
       padding:28px;
       border-radius:16px;
-      margin-bottom:24px;
-      border:1px solid rgba(255,255,255,0.06);
+      backdrop-filter: blur(6px);
+      transition:.25s ease;
     }
-    .card h3{ font-size:1.35rem; margin-bottom:10px; }
-    .card p{ color:var(--muted); }
-
-    /* ---------- GRID ---------- */
-    .grid2{
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
-      gap:28px;
-      max-width:1200px;
-      margin:0 auto;
+    .card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 10px 30px rgba(0,0,0,.35);
     }
-
-    /* ---------- IMÁGENES 9:16 ---------- */
-    .mockup{
-      width:100%;
-      aspect-ratio:9/16;
-      object-fit:cover;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,0.1);
-      box-shadow:0 0 20px rgba(0,255,200,0.15);
-    }
-
-    /* ---------- FAQ ---------- */
-    details{
-      background:rgba(255,255,255,0.05);
-      padding:18px 20px;
-      border-radius:12px;
-      margin-bottom:12px;
-      border:1px solid rgba(255,255,255,0.08);
-      cursor:pointer;
-    }
-    summary{
-      font-weight:600;
-      font-size:1.05rem;
-    }
-    details p{
-      margin-top:12px;
-      color:var(--muted);
-    }
-
-    /* ---------- FOOTER ---------- */
-    footer{
-      text-align:center;
-      padding:40px 20px;
-      background:#000;
-      font-size:.9rem;
-      color:#888;
-    }
-
   </style>
 </head>
 
 <body>
 
+<div class="bg-floating"></div>
+
 <!-- LOGO -->
-<a class="logo">
-  <img src="logo.png" alt="logo">
-  CL Tech Solutions
+<div class="logo-box">
+  <img src="logo-clt.png" alt="CLT">
+  <span>CL Tech Solutions</span>
+</div>
+
+<!-- HERO PRINCIPAL -->
+<header>
+  <h1>El Menú Digital Profesional que tu restaurante necesita HOY</h1>
+  <p>Moderniza tu negocio, acelera los pedidos, mejora la experiencia del cliente y aumenta ventas con un menú digital rápido, elegante y fácil de usar.</p>
+  <a href="#planes" class="cta-main">Quiero mi Menú Digital</a>
+</header>
+<!-- SECCIÓN: ¿QUÉ ES UN MENÚ DIGITAL PROFESIONAL? -->
+<section>
+  <h2 class="section-title">¿Qué es un Menú Digital Profesional?</h2>
+  <p class="section-sub">
+    Es una herramienta moderna que permite a tus clientes ver tu menú desde su celular, hacer pedidos, explorar tus productos con fotografías 9:16, y mejorar toda la experiencia dentro de tu restaurante.
+  </p>
+
+  <div class="card" style="text-align:center;">
+    <p>
+      Es más rápido, más atractivo y más rentable que un menú impreso.  
+      Y lo mejor: <strong>lo actualizas en segundos</strong> sin volver a imprimir nada.
+    </p>
+  </div>
+</section>
+
+
+<!-- SECCIÓN: BENEFICIOS -->
+<section>
+  <h2 class="section-title">¿Por qué tu restaurante lo necesita HOY?</h2>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:35px;">
+    
+    <div class="card">
+      <h3>📱 Pedidos más rápidos</h3>
+      <p>Tu cliente ya no espera al mesero para ver el menú. Lo escanea y pide.</p>
+    </div>
+
+    <div class="card">
+      <h3>🧁 Fotos irresistibles 9:16</h3>
+      <p>Las imágenes verticales venden hasta 3 veces más que un menú tradicional.</p>
+    </div>
+
+    <div class="card">
+      <h3>💸 Incremento directo en ventas</h3>
+      <p>Los clientes piden más cuando ven fotos grandes y claras de tus productos.</p>
+    </div>
+
+    <div class="card">
+      <h3>⚡ Actualización inmediata</h3>
+      <p>Cambias precios, agregas productos o quitas platos agotados al instante.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- SECCIÓN: DOMINIO VS SUBDOMINIO -->
+<section id="dominios">
+  <h2 class="section-title">Dominio vs Subdominio</h2>
+  <p class="section-sub">
+    Tú eliges cómo quieres mostrar tu negocio. Ambas opciones funcionan, pero una te posiciona como marca profesional.
+  </p>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;margin-top:35px;">
+
+    <!-- TARJETA 1 -->
+    <div class="card">
+      <h3 style="margin-bottom:8px;">🌐 Dominio Propio</h3>
+      <p><strong>Ejemplo:</strong> www.tunegocio.com</p>
+      <p style="opacity:.85;margin:10px 0;">
+        Te convierte automáticamente en una marca profesional.  
+        Los clientes confían más en un dominio único.
+      </p>
+      <p><strong>Costo:</strong> $60 / año</p>
+      <p><strong>Ideal si:</strong> Quieres posicionarte, crecer y vender más.</p>
+    </div>
+
+    <!-- TARJETA 2 -->
+    <div class="card">
+      <h3 style="margin-bottom:8px;">🏷 Subdominio Gratis</h3>
+      <p><strong>Ejemplo:</strong> tunegocio.crisslombeida.com</p>
+      <p style="opacity:.85;margin:10px 0;">
+        Es perfecto si quieres empezar rápido y sin inversión inicial.
+      </p>
+      <p><strong>Costo:</strong> $0</p>
+      <p><strong>Ideal si:</strong> Necesitas empezar hoy mismo sin comprar dominio.</p>
+    </div>
+
+  </div>
+
+  <p style="text-align:center;margin-top:25px;">
+    👉 Nosotros recomendamos <strong>comprar tu dominio</strong> para proyectar más profesionalismo,  
+    pero puedes iniciar sin él sin problema.
+  </p>
+</section>
+
+
+<!-- SECCIÓN: PLAN OFICIAL DEL MENÚ DIGITAL -->
+<section id="planes">
+  <h2 class="section-title">Tu Menú Digital Incluye Todo</h2>
+  <p class="section-sub">
+    No pagas diseño, no pagas actualizaciones, no pagas soporte.  
+    Solo pagas por tener tu menú funcionando 24/7.
+  </p>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:22px;margin-top:35px;">
+
+    <div class="card" style="border:2px solid var(--clr1);">
+      <h3 style="font-size:1.6rem;margin-bottom:10px;">💎 Plan de Suscripción</h3>
+
+      <p style="font-size:2rem;font-weight:700;margin:10px 0;color:var(--accent);">
+        $12 <span style="font-size:1rem;color:#fff;">/ mes</span>
+      </p>
+
+      <p style="opacity:.85;margin-bottom:20px;">
+        Contrato mínimo 12 meses
+      </p>
+
+      <ul style="list-style:none;padding-left:0;line-height:1.7;">
+        <li>✔ Menú digital profesional</li>
+        <li>✔ Galería 9:16 para tus productos</li>
+        <li>✔ Actualizaciones ilimitadas</li>
+        <li>✔ Hosting premium incluido</li>
+        <li>✔ Subdominio gratis</li>
+        <li>✔ Soporte técnico</li>
+        <li>✔ Optimización móvil</li>
+        <li>✔ Instalación en 24 horas</li>
+      </ul>
+
+      <p style="margin-top:18px;font-size:1rem;">
+        <strong>Setup inicial:</strong> $72  
+        (Dominio opcional)
+      </p>
+
+      <a href="#contacto" class="cta-main" style="margin-top:20px;display:inline-block;">
+        Quiero Empezar Hoy
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- SECCIÓN: POR QUÉ SOMOS DIFERENTES -->
+<section>
+  <h2 class="section-title">¿Por qué elegirnos?</h2>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:35px;">
+
+    <div class="card">
+      <h3>⚡ Instalación en 24h</h3>
+      <p>No esperas semanas. Mañana tu menú está funcionando.</p>
+    </div>
+
+    <div class="card">
+      <h3>🔧 Actualizaciones ilimitadas</h3>
+      <p>Cambios de fotos, productos o precios sin costo adicional.</p>
+    </div>
+
+    <div class="card">
+      <h3>💬 Soporte real</h3>
+      <p>No bots. Personas reales ayudándote en minutos.</p>
+    </div>
+
+    <div class="card">
+      <h3>🚀 Optimizado para vender</h3>
+      <p>No es “solo un menú”. Es una herramienta para aumentar ventas.</p>
+    </div>
+
+  </div>
+</section>
+<!-- SECCIÓN: EJEMPLOS VISUALES 9:16 -->
+<section id="ejemplos">
+  <h2 class="section-title">Ejemplos Visuales</h2>
+  <p class="section-sub">Así se verá tu menú digital dentro del restaurante.</p>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:35px;text-align:center;">
+
+    <!-- Ejemplo 1 -->
+    <div class="card">
+      <img src="ejemplo1.png" alt="Ejemplo Menú 1" style="width:100%;border-radius:12px;margin-bottom:15px;">
+      <h3>Diseño para Comida Rápida</h3>
+      <p style="opacity:.85;">Ideal para hamburguesas, pizzas, shawarmas y cafeterías modernas.</p>
+    </div>
+
+    <!-- Ejemplo 2 -->
+    <div class="card">
+      <img src="ejemplo2.png" alt="Ejemplo Menú 2" style="width:100%;border-radius:12px;margin-bottom:15px;">
+      <h3>Diseño para Postres y Heladerías</h3>
+      <p style="opacity:.85;">Fotos irresistibles que aumentan el ticket promedio.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SECCIÓN: TESTIMONIOS -->
+<section id="testimonios">
+  <h2 class="section-title">Lo que dicen los negocios reales</h2>
+  <p class="section-sub">Restaurantes y cafeterías que ya aumentaron ventas usando nuestro menú digital.</p>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:22px;margin-top:35px;">
+
+    <!-- Testimonio 1 -->
+    <div class="card">
+      <h3>«Las ventas subieron en la primera semana»</h3>
+      <p style="opacity:.85;margin:8px 0;">
+        “Mis clientes empiezan a pedir más porque todo se ve más profesional.  
+        Antes nadie pedía los combos, ahora salen bastante.”
+      </p>
+      <p style="font-weight:700;">— Restaurante El Hornito</p>
+    </div>
+
+    <!-- Testimonio 2 -->
+    <div class="card">
+      <h3>«Actualizo precios en 1 minuto»</h3>
+      <p style="opacity:.85;margin:8px 0;">
+        “Antes imprimía menús cada mes, un gasto innecesario.  
+        Ahora cambio precios, fotos y productos cuando quiero.”
+      </p>
+      <p style="font-weight:700;">— Café Nube Dulce</p>
+    </div>
+
+    <!-- Testimonio 3 -->
+    <div class="card">
+      <h3>«A mis clientes les encanta»</h3>
+      <p style="opacity:.85;margin:8px 0;">
+        “Se ve moderno, rápido y elegante. Es como tener mi propia app sin pagar miles de dólares.”
+      </p>
+      <p style="font-weight:700;">— Heladería PolarMix</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SECCIÓN: PREGUNTAS FRECUENTES -->
+<section id="faq">
+  <h2 class="section-title">Preguntas Frecuentes</h2>
+
+  <div style="display:flex;flex-direction:column;gap:18px;margin-top:35px;">
+
+    <!-- 1 -->
+    <div class="card">
+      <h3>¿Cuánto tiempo tarda en estar listo mi menú digital?</h3>
+      <p style="opacity:.85;">En máximo 24 horas desde que envías tu información inicial.</p>
+    </div>
+
+    <!-- 2 -->
+    <div class="card">
+      <h3>¿Qué incluye el pago mensual de $12?</h3>
+      <p style="opacity:.85;">
+        Hosting premium, actualizaciones ilimitadas, cambios de fotos, ajustes, soporte y mantenimiento completo.
+      </p>
+    </div>
+
+    <!-- 3 -->
+    <div class="card">
+      <h3>¿Puedo usar un dominio propio?</h3>
+      <p style="opacity:.85;">
+        Sí. Puedes comprar uno por $60/año o usar nuestro subdominio gratis.
+      </p>
+    </div>
+
+    <!-- 4 -->
+    <div class="card">
+      <h3>¿Qué pasa si quiero agregar nuevos productos?</h3>
+      <p style="opacity:.85;">
+        Nos envías las fotos y los nombres y los agregamos sin costo adicional.
+      </p>
+    </div>
+
+    <!-- 5 -->
+    <div class="card">
+      <h3>¿Puedo cambiar precios o eliminar productos?</h3>
+      <p style="opacity:.85;">
+        Sí, las veces que quieras. Es parte del servicio.
+      </p>
+    </div>
+
+    <!-- 6 -->
+    <div class="card">
+      <h3>¿Qué necesito para comenzar?</h3>
+      <p style="opacity:.85;">
+        Solo enviar fotos 9:16 de tus platos y un listado de productos. Nosotros hacemos todo lo demás.
+      </p>
+    </div>
+
+  </div>
+</section>
+<!-- SECCIÓN: GARANTÍA -->
+<section id="garantia">
+  <h2 class="section-title">Garantía de Instalación y Funcionamiento</h2>
+  <p class="section-sub">
+    Tu menú digital estará funcionando al 100% desde el día uno.  
+    Si algo falla, lo corregimos sin costo y sin preguntas.
+  </p>
+
+  <div class="card" style="max-width:800px;margin:35px auto;padding:30px;text-align:center;">
+    <h3 style="font-size:1.6rem;margin-bottom:15px;">Garantía TOTAL de 7 Días</h3>
+    <p style="opacity:.85;">
+      Si durante los primeros 7 días tu menú digital no funciona como prometemos,  
+      lo ajustamos completamente gratis hasta que quedes satisfecho.
+    </p>
+  </div>
+</section>
+
+
+<!-- SECCIÓN FINAL: CTA PODEROSO -->
+<section id="cta-final" style="padding:110px 20px;text-align:center;background:linear-gradient(135deg,#0f1a0f,#1a2e1a);margin-top:60px;border-top:1px solid rgba(255,255,255,0.08);">
+  <h2 class="section-title">Transforma tu Restaurante Hoy</h2>
+  <p class="section-sub" style="max-width:720px;margin:auto;">
+    Tu menú digital estará funcionando en menos de 24 horas.  
+    Moderno, rápido, elegante y diseñado para aumentar ventas desde el primer día.
+  </p>
+
+  <a href="https://wa.me/593990945636" class="card" style="display:inline-block;margin-top:30px;padding:18px 38px;border-radius:999px;font-weight:700;text-decoration:none;background:#25D366;color:#000;">
+    Hablar por WhatsApp
+  </a>
+
+  <p style="margin-top:18px;color:#bbb;">Instalación inicial solo $**XX** — Mantenimiento mensual $12</p>
+</section>
+
+
+<!-- FOOTER ELEGANTE -->
+<footer style="padding:45px 20px;text-align:center;opacity:.75;margin-top:60px;">
+  <p style="font-weight:700;font-size:1.1rem;">CopierMaster C&G Soluciones Digitales</p>
+  <p>© 2025 — Todos los derechos reservados</p>
+  <p>
+    <a href="mailto:info@copiermastercyg.com.ec" style="color:#90ee90;text-decoration:none;">info@copiermastercyg.com.ec</a>  
+    ·  
+    <a href="https://copiermastercyg.com.ec" style="color:#90ee90;text-decoration:none;">copiermastercyg.com.ec</a>
+  </p>
+</footer>
+
+
+<!-- BOTÓN FLOTANTE WHATSAPP -->
+<a href="https://wa.me/593990945636" 
+   style="position:fixed;bottom:25px;right:25px;z-index:999;background:#25D366;width:65px;height:65px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(0,0,0,.45);">
+   <img src="whatsapp.png" alt="WhatsApp" style="width:35px;height:35px;">
 </a>
 
-<!-- HERO -->
-<header>
-  <h1>El Menú Digital que hará crecer tu restaurante en 2026</h1>
-  <p>Instalación inmediata en 24 horas. Actualizaciones ilimitadas. Tu negocio se vuelve moderno, rápido y eficiente. Empieza con solo <b>$12 al mes</b>.</p>
-  <a href="#planes" class="btn">Quiero instalar mi Menú Digital</a>
-
-  <img src="hero-pedido.png" alt="Cliente haciendo pedido digital">
-</header>
-
-<!-- ¿QUÉ ES UN MENÚ DIGITAL PROFESIONAL? -->
-<section>
-  <h2 class="title">¿Qué es un Menú Digital Profesional?</h2>
-  <p class="subtitle">Es una versión moderna y 100% optimizada de tu carta tradicional. Funciona en cualquier celular, carga rápido, organiza tu menú, agrega fotos y permite enviar pedidos directo a WhatsApp.</p>
-
-  <div class="grid2">
-    <div class="card">
-      <h3>📱 Fácil de usar</h3>
-      <p>Navegación intuitiva. Tus clientes encuentran lo que quieren en segundos.</p>
-    </div>
-
-    <div class="card">
-      <h3>⚡ Rápido y siempre disponible</h3>
-      <p>No depende de apps externas. Funciona 24/7 en tu propio enlace.</p>
-    </div>
-
-    <div class="card">
-      <h3>🛒 Pedido directo</h3>
-      <p>El cliente selecciona → envía → llega a tu WhatsApp en formato ordenado.</p>
-    </div>
-
-    <div class="card">
-      <h3>🎨 Visual y moderno</h3>
-      <p>Productos con fotos en alta calidad, precios claros y combos destacados.</p>
-    </div>
-  </div>
-</section>
-
-<!-- POR QUÉ TU RESTAURANTE LO NECESITA HOY -->
-<section>
-  <h2 class="title">¿Por qué tu restaurante necesita esto HOY?</h2>
-  <p class="subtitle">Los clientes ya no quieren leer cartas impresas. Quieren rapidez, claridad y un proceso fácil. Esto aumenta ventas.</p>
-
-  <div class="grid2">
-    <div class="card">
-      <h3>✔️ Aumenta el ticket promedio</h3>
-      <p>Al ver fotos, los clientes piden más.</p>
-    </div>
-
-    <div class="card">
-      <h3>✔️ Reduce errores</h3>
-      <p>Pedidos llegan claros, sin confusiones.</p>
-    </div>
-
-    <div class="card">
-      <h3>✔️ Menos tiempo del mesero</h3>
-      <p>Los clientes revisan solos. Tu equipo se dedica a atender.</p>
-    </div>
-
-    <div class="card">
-      <h3>✔️ Perfecto para publicidad</h3>
-      <p>Comparte tu menú en redes sociales, Google Maps y WhatsApp.</p>
-    </div>
-  </div>
-</section>
-
-<!-- DOMINIO VS SUBDOMINIO -->
-<section id="dominio">
-  <h2 class="title">¿Dominio propio o Subdominio?</h2>
-  <p class="subtitle">Tú decides. Ambos funcionan, pero uno te vuelve MARCA.</p>
-
-  <div class="grid2">
-
-    <div class="card">
-      <h3>🔥 Dominio propio (recomendado)</h3>
-      <p>Ej: <b>www.panchosykombos.com</b></p>
-      <p>
-        ✔️ Se ve profesional  
-        ✔️ Fortalece tu marca  
-        ✔️ Permite futuras campañas  
-      </p>
-      <p><b>Precio: $60 / año</b></p>
-    </div>
-
-    <div class="card">
-      <h3>⭐ Subdominio GRATIS</h3>
-      <p>Ej: <b>panchosykombos.crisslombeida.com</b></p>
-      <p>
-        ✔️ Sin costo  
-        ✔️ Instalación inmediata  
-        ✔️ Ideal para empezar  
-      </p>
-      <p><b>Mensualidad: $12</b></p>
-    </div>
-
-  </div>
-</section>
-
-<!-- LO QUE INCLUYE -->
-<section id="planes">
-  <h2 class="title">Lo que incluye tu plan</h2>
-  <p class="subtitle">Todo lo necesario para operar desde el primer día.</p>
-
-  <div class="grid2">
-    <div class="card">
-      <h3>🚀 Instalación en 24 horas</h3>
-      <p>Tu menú listo mañana mismo.</p>
-    </div>
-
-    <div class="card">
-      <h3>♻️ Actualizaciones ilimitadas</h3>
-      <p>Cambios de productos, precios y fotos.</p>
-    </div>
-
-    <div class="card">
-      <h3>📦 Hosting incluido</h3>
-      <p>Tu menú nunca se cae.</p>
-    </div>
-
-    <div class="card">
-      <h3>🧾 Soporte y mantenimiento</h3>
-      <p>Nosotros lo manejamos TODO.</p>
-    </div>
-  </div>
-</section>
-
-<!-- POR QUÉ SOMOS DIFERENTES -->
-<section>
-  <h2 class="title">¿Por qué somos diferentes?</h2>
-
-  <div class="grid2">
-    <div class="card">
-      <h3>💡 Diseño tipo startup</h3>
-      <p>Moderno, rápido y profesional.</p>
-    </div>
-
-    <div class="card">
-      <h3>🔍 Optimizado para vender</h3>
-      <p>No es solo una carta. Es una herramienta de ventas.</p>
-    </div>
-
-    <div class="card">
-      <h3>🤖 IA en tu ecosistema</h3>
-      <p>Preparado para integrar agentes conversacionales.</p>
-    </div>
-
-    <div class="card">
-      <h3>📈 Escalable</h3>
-      <p>Puede crecer hasta sistema de pedidos completo.</p>
-    </div>
-  </div>
-</section>
-
-<!-- PASOS -->
-<section>
-  <h2 class="title">Cómo funciona</h2>
-
-  <div class="grid2">
-    <div class="card">
-      <h3>1️⃣ Pagas $12</h3>
-      <p>Activas tu menú y comenzamos la instalación.</p>
-    </div>
-
-    <div class="card">
-      <h3>2️⃣ Envíanos tus productos</h3>
-      <p>Fotos, nombres y precios.</p>
-    </div>
-
-    <div class="card">
-      <h3>3️⃣ Instalación en 24 horas</h3>
-      <p>Recibes tu enlace final y empieza a vender.</p>
-    </div>
-  </div>
-</section>
-
-<!-- EJEMPLOS 9:16 -->
-<section>
-  <h2 class="title">Ejemplos visuales</h2>
-  <p class="subtitle">Así se verá tu menú digital en celular.</p>
-
-  <div class="grid2">
-    <img src="ejemplo1.png" class="mockup" alt="ejemplo 1">
-    <img src="ejemplo2.png" class="mockup" alt="ejemplo 2">
-  </div>
-</section>
-
-<!-- TESTIMONIOS -->
-<section>
-  <h2 class="title">Lo que dicen los negocios reales</h2>
-
-  <div class="grid2">
-
-    <div class="card">
-      <h3>“Mis ventas subieron”</h3>
-      <p>Los clientes ahora piden más porque ven las fotos. El menú es rapidísimo.</p>
-      <small>— Javier, Hamburgesas Don Lucho</small>
-    </div>
-
-    <div class="card">
-      <h3>“Me ahorra tiempo”</h3>
-      <p>Los meseros ya no tienen que explicar cada plato. El cliente entra y pide.</p>
-      <small>— María, Pizza Rosso</small>
-    </div>
-
-  </div>
-</section>
-
-<!-- FAQ -->
-<section>
-  <h2 class="title">Preguntas frecuentes</h2>
-
-  <details>
-    <summary>¿Puedo empezar sin comprar dominio?</summary>
-    <p>Sí. Con subdominio gratis: tudominio.crisslombeida.com</p>
-  </details>
-
-  <details>
-    <summary>¿Cuánto cuesta al año?</summary>
-    <p>12 dólares mensuales. Total anual: $144.</p>
-  </details>
-
-  <details>
-    <summary>¿Puedo actualizar cuando quiera?</summary>
-    <p>Sí. Todas las actualizaciones son ilimitadas.</p>
-  </details>
-
-  <details>
-    <summary>¿Tarda mucho?</summary>
-    <p>24 horas después del pago.</p>
-  </details>
-
-</section>
-
-<!-- GARANTÍA -->
-<section>
-  <h2 class="title">Garantía CL Tech Solutions</h2>
-  <p class="subtitle">Si en 24 horas no tienes tu menú listo, te devolvemos tu dinero. Sin excusas.</p>
-</section>
-
-<!-- CTA FINAL -->
-<section style="text-align:center;padding:90px 22px;background:#031012;">
-  <h2 class="title">Instala tu Menú Digital HOY</h2>
-  <p class="subtitle">Empieza por solo $12. Instálalo mañana mismo.</p>
-  <a href="#planes" class="btn">Quiero activar mi menú</a>
-</section>
-
-<footer>
-  © 2026 – CL Tech Solutions. Todos los derechos reservados.
-</footer>
+<!-- SCRIPTS FINALES (NO TOCAR) -->
+<script>
+// Suavizado de scroll
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener("click",e=>{
+    const target=document.querySelector(a.getAttribute("href"));
+    if(target){
+      e.preventDefault();
+      window.scrollTo({top:target.offsetTop-20,behavior:"smooth"});
+    }
+  });
+});
+</script>
 
 </body>
 </html>
